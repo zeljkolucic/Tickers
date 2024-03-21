@@ -15,13 +15,13 @@ final class RemoteTickerRepositoryTests: XCTestCase {
         XCTAssertTrue(client.requestedURLs.isEmpty)
     }
     
-    func test_loadTwice_requestsDataFromURLTwice() {
+    func test_loadTwice_requestsDataFromURLTwice() async {
         let url = URL(string: "https://a-given-url.com")!
         let (sut, client) = makeSUT(url: url)
         
         do {
-            try sut.load()
-            try sut.load()
+            try await sut.load()
+            try await sut.load()
         } catch {
             XCTFail("Expected success, got error instead")
         }
@@ -29,18 +29,34 @@ final class RemoteTickerRepositoryTests: XCTestCase {
         XCTAssertEqual(client.requestedURLs, [url, url])
     }
     
-    func test_load_deliversErrorOnClientError() {
+    func test_load_deliversErrorOnClientError() async {
         let (sut, client) = makeSUT()
         let error = NSError(domain: "any error", code: 0)
-        client.error = error
+        client.result = .failure(error)
         
         do {
-            try sut.load()
+            try await sut.load()
             XCTFail("Expected to deliver error on client error")
         } catch let error as RemoteTickerRepository.Error {
             XCTAssertEqual(error, .connectivity)
         } catch {
             XCTFail("Expected to deliver connectivity error, got \(error) instead")
+        }
+    }
+    
+    func test_load_deliversErrorOnNon200HTTPResponse() async {
+        let url = URL(string: "https://a-url.com")!
+        let (sut, client) = makeSUT(url: url)
+        let non200HTTPResponse = HTTPURLResponse(url: url, statusCode: 199, httpVersion: nil, headerFields: nil)!
+        client.result = .success(non200HTTPResponse)
+        
+        do {
+            try await sut.load()
+            XCTFail("Expected to deliver error on non-200 HTTP repsponse")
+        } catch let error as RemoteTickerRepository.Error {
+            XCTAssertEqual(error, .invalidData)
+        } catch {
+            XCTFail("Expected to deliver invalid data error, got \(error) instead")
         }
     }
     
@@ -54,12 +70,18 @@ final class RemoteTickerRepositoryTests: XCTestCase {
     
     private final class HTTPClientSpy: HTTPClient {
         var requestedURLs = [URL]()
-        var error: Error?
+        var result: Result<HTTPURLResponse, Error>?
         
-        func get(from url: URL) throws {
+        func get(from url: URL) async throws -> HTTPURLResponse {
             requestedURLs.append(url)
-            if let error {
+            
+            return switch result {
+            case let .success(response):
+                response
+            case let .failure(error):
                 throw error
+            case .none:
+                anyHTTPURLResponse
             }
         }
     }

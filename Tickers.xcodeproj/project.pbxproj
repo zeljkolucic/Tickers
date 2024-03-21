@@ -14,6 +14,7 @@
 		E45BA7152BAC488B009765E4 /* RemoteTickerRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7142BAC488B009765E4 /* RemoteTickerRepositoryTests.swift */; };
 		E45BA7172BAC4FBC009765E4 /* RemoteTickerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7162BAC4FBC009765E4 /* RemoteTickerRepository.swift */; };
 		E45BA7192BAC4FDE009765E4 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7182BAC4FDE009765E4 /* HTTPClient.swift */; };
+		E45BA71C2BAC5CC4009765E4 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA71B2BAC5CC4009765E4 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		E45BA7142BAC488B009765E4 /* RemoteTickerRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTickerRepositoryTests.swift; sourceTree = "<group>"; };
 		E45BA7162BAC4FBC009765E4 /* RemoteTickerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTickerRepository.swift; sourceTree = "<group>"; };
 		E45BA7182BAC4FDE009765E4 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		E45BA71B2BAC5CC4009765E4 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +100,18 @@
 		E45BA70C2BAC482F009765E4 /* TickersTests */ = {
 			isa = PBXGroup;
 			children = (
+				E45BA71A2BAC5CBB009765E4 /* Helpers */,
 				E45BA7142BAC488B009765E4 /* RemoteTickerRepositoryTests.swift */,
 			);
 			path = TickersTests;
+			sourceTree = "<group>";
+		};
+		E45BA71A2BAC5CBB009765E4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E45BA71B2BAC5CC4009765E4 /* Helpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E45BA7152BAC488B009765E4 /* RemoteTickerRepositoryTests.swift in Sources */,
+				E45BA71C2BAC5CC4009765E4 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

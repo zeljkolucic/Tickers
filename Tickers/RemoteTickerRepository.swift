@@ -13,6 +13,7 @@ public final class RemoteTickerRepository {
     
     public enum Error: Swift.Error {
         case connectivity
+        case invalidData
     }
     
     public init(client: HTTPClient, url: URL) {
@@ -20,11 +21,13 @@ public final class RemoteTickerRepository {
         self.url = url
     }
     
-    public func load() throws {
-        do {
-            try client.get(from: url)
-        } catch {
+    public func load() async throws {
+        guard let response = try? await client.get(from: url) else {
             throw Error.connectivity
+        }
+        
+        guard (200..<300).contains(response.statusCode) else {
+            throw Error.invalidData
         }
     }
 }
