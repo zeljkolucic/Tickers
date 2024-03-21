@@ -50,19 +50,11 @@ public final class RemoteTickerRepository {
         }
         
         var ticker: Ticker {
-            Ticker(name: name, lastPrice: lastPrice.formatted(.currency(code: symbol.currencyCode)), dailyChangeRelative: dailyChangeRelative)
-        }
-        
-        var name: String {
-            var name = symbol.rawValue.dropFirst().replacingOccurrences(of: "USD", with: "")
-            if name.hasSuffix(":") {
-                name.removeLast()
-            }
-            return name
+            Ticker(name: symbol.name, lastPrice: lastPrice, dailyChangeRelative: dailyChangeRelative)
         }
     }
     
-    public func load() async throws {
+    public func load() async throws -> [Ticker] {
         guard let (data, response) = try? await client.get(from: url) else {
             throw Error.connectivity
         }
@@ -70,5 +62,7 @@ public final class RemoteTickerRepository {
         guard (200..<300).contains(response.statusCode), let tickers = try? JSONDecoder().decode([RemoteTicker].self, from: data) else {
             throw Error.invalidData
         }
+        
+        return tickers.map { $0.ticker }
     }
 }

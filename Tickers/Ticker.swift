@@ -8,7 +8,13 @@
 import Foundation
 
 public struct Ticker {
-    let name: String
-    let lastPrice: String
-    let dailyChangeRelative: Float
+    public let name: String
+    public let lastPrice: Float
+    public let dailyChangeRelative: Float
+    
+    public init(name: String, lastPrice: Float, dailyChangeRelative: Float) {
+        self.name = name
+        self.lastPrice = lastPrice
+        self.dailyChangeRelative = dailyChangeRelative
+    }
 }

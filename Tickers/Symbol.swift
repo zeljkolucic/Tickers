@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Symbol: String, CaseIterable, Decodable {
+public enum Symbol: String, CaseIterable, Decodable {
     case tBTCUSD
     case tETHUSD
     case tCHSBUSD = "tCHSB:USD"
@@ -28,6 +28,15 @@ enum Symbol: String, CaseIterable, Decodable {
     case tAAVEUSD = "tAAVE:USD"
     case tPLUUSD
     case tFILUSD
+    
+    public var name: String {
+        let suffixLength = currencyCode.count
+        var name = rawValue.dropFirst().dropLast(suffixLength)
+        if name.hasSuffix(":") {
+            name.removeLast()
+        }
+        return String(name)
+    }
     
     var currencyCode: String {
         "USD"
