@@ -19,8 +19,12 @@ final class RemoteTickerRepositoryTests: XCTestCase {
         let url = URL(string: "https://a-given-url.com")!
         let (sut, client) = makeSUT(url: url)
         
-        try? sut.load()
-        try? sut.load()
+        do {
+            try sut.load()
+            try sut.load()
+        } catch {
+            XCTFail("Expected success, got error instead")
+        }
         
         XCTAssertEqual(client.requestedURLs, [url, url])
     }
