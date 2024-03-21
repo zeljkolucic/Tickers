@@ -49,11 +49,21 @@ final class RemoteTickerRepositoryTests: XCTestCase {
     func test_load_deliversErrorOn200HTTPResponseWithInvalidJSON() async {
         let url = anyURL
         let (sut, client) = makeSUT(url: url)
-        let invalidJSON = "invalid json".data(using: .utf8)!
+        let invalidJSON = Data("invalid json".utf8)
         let responseWith200StatusCode = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
         client.result = .success((invalidJSON, responseWith200StatusCode))
         
         await expect(sut, toDeliver: .failure(.invalidData))
+    }
+    
+    func test_load_deliversNoTickersOn200HTTPResponseWithEmptyJSON() async {
+        let url = anyURL
+        let (sut, client) = makeSUT()
+        let emptyJSON = Data("".utf8)
+        let responseWith200StatusCode = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
+        client.result = .success((emptyJSON, responseWith200StatusCode))
+        
+        await expect(sut, toDeliver: .success([]))
     }
     
     // MARK: - Helpers
