@@ -29,14 +29,7 @@ final class RemoteTickerRepositoryTests: XCTestCase {
         let (sut, client) = makeSUT()
         client.result = .failure(anyError)
         
-        do {
-            try await sut.load()
-            XCTFail("Expected to deliver error on client error")
-        } catch let error as RemoteTickerRepository.Error {
-            XCTAssertEqual(error, .connectivity)
-        } catch {
-            XCTFail("Expected to deliver connectivity error, got \(error) instead")
-        }
+        await expect(sut, toDeliver: .failure(.connectivity))
     }
     
     func test_load_deliversErrorOnNon200HTTPResponse() async {
@@ -48,14 +41,7 @@ final class RemoteTickerRepositoryTests: XCTestCase {
             client.result = .success((anyData, non200HTTPResponse))
             
             Task {
-                do {
-                    try await sut.load()
-                    XCTFail("Expected to deliver error on non-200 HTTP response")
-                } catch let error as RemoteTickerRepository.Error {
-                    XCTAssertEqual(error, .invalidData)
-                } catch {
-                    XCTFail("Expected to deliver invalid data error, got \(error) instead")
-                }
+                await expect(sut, toDeliver: .failure(.invalidData))
             }
         }
     }
@@ -67,17 +53,27 @@ final class RemoteTickerRepositoryTests: XCTestCase {
         let responseWith200StatusCode = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
         client.result = .success((invalidJSON, responseWith200StatusCode))
         
-        do {
-            try await sut.load()
-            XCTFail("Expected to deliver error on 200 HTTP response and invalid JSON")
-        } catch let error as RemoteTickerRepository.Error {
-            XCTAssertEqual(error, .invalidData)
-        } catch {
-            XCTFail("Expected to deliver invalid data error, got \(error) instead")
-        }
+        await expect(sut, toDeliver: .failure(.invalidData))
     }
     
     // MARK: - Helpers
+    
+    private func expect(_ sut: RemoteTickerRepository, toDeliver expectedResult: Result<[Ticker], RemoteTickerRepository.Error>, file: StaticString = #filePath, line: UInt = #line) async {
+        var receivedError: NSError?
+        
+        do {
+            try await sut.load()
+        } catch {
+            receivedError = error as NSError
+        }
+        
+        switch expectedResult {
+        case .success:
+            break
+        case let .failure(error):
+            XCTAssertEqual(receivedError, error as NSError, file: file, line: line)
+        }
+    }
     
     private func makeSUT(url: URL = anyURL) -> (sut: RemoteTickerRepository, client: HTTPClientSpy) {
         let client = HTTPClientSpy()

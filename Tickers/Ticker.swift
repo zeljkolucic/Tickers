@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Ticker {
+public struct Ticker {
     let name: String
     let lastPrice: String
     let dailyChangeRelative: Float
