@@ -176,9 +176,3 @@ final class RemoteTickerRepositoryTests: XCTestCase {
         }
     }
 }
-
-extension Ticker: Equatable {
-    public static func == (lhs: Ticker, rhs: Ticker) -> Bool {
-        lhs.name == rhs.name && lhs.lastPrice == rhs.lastPrice && lhs.dailyChangeRelative == rhs.dailyChangeRelative
-    }
-}
