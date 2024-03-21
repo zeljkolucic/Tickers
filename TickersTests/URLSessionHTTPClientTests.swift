@@ -21,7 +21,7 @@ final class URLSessionHTTPClient {
 
 final class URLSessionHTTPClientTests: XCTestCase {
     func test_get_deliversErrorOnRequestError() async {
-        URLProtocol.registerClass(URLProtocolStub.self)
+        URLProtocolStub.startIntereceptingRequests()
         let url = anyURL
         let error = anyError
         URLProtocolStub.stub(url: url, error: error)
@@ -35,7 +35,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
             XCTAssertEqual(receivedError.domain, error.domain)
             XCTAssertEqual(receivedError.code, error.code)
         }
-        URLProtocol.unregisterClass(URLProtocolStub.self)
+        URLProtocolStub.stopIntereceptingRequests()
     }
     
     // MARK: - Helpers
@@ -49,6 +49,15 @@ final class URLSessionHTTPClientTests: XCTestCase {
         
         static func stub(url: URL, error: Error? = nil) {
             stubs[url] = Stub(error: error)
+        }
+        
+        static func startIntereceptingRequests() {
+            URLProtocol.registerClass(URLProtocolStub.self)
+        }
+        
+        static func stopIntereceptingRequests() {
+            URLProtocol.unregisterClass(URLProtocolStub.self)
+            stubs = [:]
         }
         
         override class func canInit(with request: URLRequest) -> Bool {
