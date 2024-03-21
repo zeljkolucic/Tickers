@@ -27,7 +27,7 @@ final class RemoteTickerRepositoryTests: XCTestCase {
     
     func test_load_deliversErrorOnClientError() async {
         let (sut, client) = makeSUT()
-        client.result = .failure(anyError)
+        client.stub(.failure(anyError))
         
         await expect(sut, toDeliver: .failure(.connectivity))
     }
@@ -38,7 +38,7 @@ final class RemoteTickerRepositoryTests: XCTestCase {
         
         [199, 300, 400, 500].forEach { statusCode in
             let non200HTTPResponse = HTTPURLResponse(url: url, statusCode: statusCode, httpVersion: nil, headerFields: nil)!
-            client.result = .success((anyData, non200HTTPResponse))
+            client.stub(.success((anyData, non200HTTPResponse)))
             
             Task {
                 await expect(sut, toDeliver: .failure(.invalidData))
@@ -51,7 +51,7 @@ final class RemoteTickerRepositoryTests: XCTestCase {
         let (sut, client) = makeSUT(url: url)
         let invalidJSON = Data("invalid json".utf8)
         let responseWith200StatusCode = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
-        client.result = .success((invalidJSON, responseWith200StatusCode))
+        client.stub(.success((invalidJSON, responseWith200StatusCode)))
         
         await expect(sut, toDeliver: .failure(.invalidData))
     }
@@ -61,7 +61,7 @@ final class RemoteTickerRepositoryTests: XCTestCase {
         let (sut, client) = makeSUT()
         let emptyJSON = Data("[]".utf8)
         let responseWith200StatusCode = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
-        client.result = .success((emptyJSON, responseWith200StatusCode))
+        client.stub(.success((emptyJSON, responseWith200StatusCode)))
         
         await expect(sut, toDeliver: .success([]))
     }
@@ -101,7 +101,7 @@ final class RemoteTickerRepositoryTests: XCTestCase {
         let tickers = [ticker0.model, ticker1.model]
         let validJSON = try! JSONSerialization.data(withJSONObject: [ticker0.json, ticker1.json])
         let responseWith200StatusCode = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
-        client.result = .success((validJSON, responseWith200StatusCode))
+        client.stub(.success((validJSON, responseWith200StatusCode)))
         
         await expect(sut, toDeliver: .success(tickers))
     }
@@ -154,7 +154,11 @@ final class RemoteTickerRepositoryTests: XCTestCase {
     
     private final class HTTPClientSpy: HTTPClient {
         var requestedURLs = [URL]()
-        var result: Result<(Data, HTTPURLResponse), Error>?
+        private var result: Result<(Data, HTTPURLResponse), Error>?
+        
+        func stub(_ result: Result<(Data, HTTPURLResponse), Error>) {
+            self.result = result
+        }
         
         func get(from url: URL) async throws -> (Data, HTTPURLResponse) {
             requestedURLs.append(url)
