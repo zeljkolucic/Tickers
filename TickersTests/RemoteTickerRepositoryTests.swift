@@ -146,10 +146,18 @@ final class RemoteTickerRepositoryTests: XCTestCase {
         return (model, json)
     }
     
-    private func makeSUT(url: URL = anyURL) -> (sut: RemoteTickerRepository, client: HTTPClientSpy) {
+    private func makeSUT(url: URL = anyURL, file: StaticString = #filePath, line: UInt = #line) -> (sut: RemoteTickerRepository, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
         let sut = RemoteTickerRepository(client: client, url: url)
+        trackForMemoryLeaks(client)
+        trackForMemoryLeaks(sut)
         return (sut, client)
+    }
+    
+    private func trackForMemoryLeaks(_ instance: AnyObject, file: StaticString = #filePath, line: UInt = #line) {
+        addTeardownBlock { [weak instance] in
+            XCTAssertNil(instance, "Instance should have been deallocated. Potential memory leak.", file: file, line: line)
+        }
     }
     
     private final class HTTPClientSpy: HTTPClient {
