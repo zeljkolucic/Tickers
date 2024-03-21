@@ -12,6 +12,8 @@
 		E45BA6FE2BAC0F28009765E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45BA6FD2BAC0F28009765E4 /* Assets.xcassets */; };
 		E45BA7012BAC0F28009765E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45BA7002BAC0F28009765E4 /* Preview Assets.xcassets */; };
 		E45BA7152BAC488B009765E4 /* RemoteTickerRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7142BAC488B009765E4 /* RemoteTickerRepositoryTests.swift */; };
+		E45BA7172BAC4FBC009765E4 /* RemoteTickerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7162BAC4FBC009765E4 /* RemoteTickerRepository.swift */; };
+		E45BA7192BAC4FDE009765E4 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7182BAC4FDE009765E4 /* HTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,8 @@
 		E45BA7002BAC0F28009765E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E45BA70B2BAC482E009765E4 /* TickersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TickersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45BA7142BAC488B009765E4 /* RemoteTickerRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTickerRepositoryTests.swift; sourceTree = "<group>"; };
+		E45BA7162BAC4FBC009765E4 /* RemoteTickerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTickerRepository.swift; sourceTree = "<group>"; };
+		E45BA7182BAC4FDE009765E4 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 				E45BA6FB2BAC0F26009765E4 /* ContentView.swift */,
 				E45BA6FD2BAC0F28009765E4 /* Assets.xcassets */,
 				E45BA6FF2BAC0F28009765E4 /* Preview Content */,
+				E45BA7162BAC4FBC009765E4 /* RemoteTickerRepository.swift */,
+				E45BA7182BAC4FDE009765E4 /* HTTPClient.swift */,
 			);
 			path = Tickers;
 			sourceTree = "<group>";
@@ -200,6 +206,8 @@
 			files = (
 				E45BA6FC2BAC0F26009765E4 /* ContentView.swift in Sources */,
 				E45BA6FA2BAC0F26009765E4 /* TickersApp.swift in Sources */,
+				E45BA7192BAC4FDE009765E4 /* HTTPClient.swift in Sources */,
+				E45BA7172BAC4FBC009765E4 /* RemoteTickerRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

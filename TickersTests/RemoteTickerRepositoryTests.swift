@@ -5,29 +5,8 @@
 //  Created by Zeljko Lucic on 21.3.24..
 //
 
+import Tickers
 import XCTest
-
-struct Ticker {
-    
-}
-
-protocol HTTPClient {
-    func get(from url: URL)
-}
-
-final class RemoteTickerRepository {
-    private let client: HTTPClient
-    private let url: URL
-    
-    init(client: HTTPClient, url: URL) {
-        self.client = client
-        self.url = url
-    }
-    
-    func load() {
-        client.get(from: url)
-    }
-}
 
 final class RemoteTickerRepositoryTests: XCTestCase {
     func test_init_doesNotRequestDataFromURL() {
