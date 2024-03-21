@@ -19,6 +19,7 @@
 		E45BA7202BAC6532009765E4 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA71F2BAC6532009765E4 /* Symbol.swift */; };
 		E45BA7222BACE8BE009765E4 /* XCTestCase+trackForMemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7212BACE8BE009765E4 /* XCTestCase+trackForMemoryLeaks.swift */; };
 		E45BA7242BACE90C009765E4 /* Ticker+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7232BACE90C009765E4 /* Ticker+Equatable.swift */; };
+		E45BA7262BACE943009765E4 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7252BACE943009765E4 /* HTTPClientSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		E45BA71F2BAC6532009765E4 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		E45BA7212BACE8BE009765E4 /* XCTestCase+trackForMemoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+trackForMemoryLeaks.swift"; sourceTree = "<group>"; };
 		E45BA7232BACE90C009765E4 /* Ticker+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticker+Equatable.swift"; sourceTree = "<group>"; };
+		E45BA7252BACE943009765E4 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				E45BA71B2BAC5CC4009765E4 /* Helpers.swift */,
 				E45BA7212BACE8BE009765E4 /* XCTestCase+trackForMemoryLeaks.swift */,
 				E45BA7232BACE90C009765E4 /* Ticker+Equatable.swift */,
+				E45BA7252BACE943009765E4 /* HTTPClientSpy.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				E45BA7152BAC488B009765E4 /* RemoteTickerRepositoryTests.swift in Sources */,
 				E45BA7242BACE90C009765E4 /* Ticker+Equatable.swift in Sources */,
 				E45BA71C2BAC5CC4009765E4 /* Helpers.swift in Sources */,
+				E45BA7262BACE943009765E4 /* HTTPClientSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
