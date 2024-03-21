@@ -21,6 +21,7 @@
 		E45BA7242BACE90C009765E4 /* Ticker+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7232BACE90C009765E4 /* Ticker+Equatable.swift */; };
 		E45BA7262BACE943009765E4 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7252BACE943009765E4 /* HTTPClientSpy.swift */; };
 		E45BA7282BACE9B1009765E4 /* TickerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7272BACE9B1009765E4 /* TickerRepository.swift */; };
+		E45BA72A2BACEB7D009765E4 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7292BACEB7D009765E4 /* URLSessionHTTPClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		E45BA7232BACE90C009765E4 /* Ticker+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticker+Equatable.swift"; sourceTree = "<group>"; };
 		E45BA7252BACE943009765E4 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 		E45BA7272BACE9B1009765E4 /* TickerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerRepository.swift; sourceTree = "<group>"; };
+		E45BA7292BACEB7D009765E4 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			children = (
 				E45BA71A2BAC5CBB009765E4 /* Helpers */,
 				E45BA7142BAC488B009765E4 /* RemoteTickerRepositoryTests.swift */,
+				E45BA7292BACEB7D009765E4 /* URLSessionHTTPClientTests.swift */,
 			);
 			path = TickersTests;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E45BA7222BACE8BE009765E4 /* XCTestCase+trackForMemoryLeaks.swift in Sources */,
+				E45BA72A2BACEB7D009765E4 /* URLSessionHTTPClientTests.swift in Sources */,
 				E45BA7152BAC488B009765E4 /* RemoteTickerRepositoryTests.swift in Sources */,
 				E45BA7242BACE90C009765E4 /* Ticker+Equatable.swift in Sources */,
 				E45BA71C2BAC5CC4009765E4 /* Helpers.swift in Sources */,
