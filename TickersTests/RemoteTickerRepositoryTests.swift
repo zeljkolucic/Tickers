@@ -70,7 +70,7 @@ final class RemoteTickerRepositoryTests: XCTestCase {
         let url = anyURL
         let (sut, client) = makeSUT()
         
-        let (ticker0, ticker0JSON) = makeTicker(
+        let ticker0 = makeTicker(
             symbol: .init(rawValue: "tBTCUSD")!,
             bid: 64714,
             bidSize: 25.78401731,
@@ -84,7 +84,7 @@ final class RemoteTickerRepositoryTests: XCTestCase {
             low: 62527
         )
         
-        let (ticker1, ticker1JSON) = makeTicker(
+        let ticker1 = makeTicker(
             symbol: .init(rawValue: "tLTCUSD")!,
             bid: 81.345,
             bidSize: 795.74956821,
@@ -98,11 +98,12 @@ final class RemoteTickerRepositoryTests: XCTestCase {
             low: 77.927
         )
         
-        let validJSON = try! JSONSerialization.data(withJSONObject: [ticker0JSON, ticker1JSON])
+        let tickers = [ticker0.model, ticker1.model]
+        let validJSON = try! JSONSerialization.data(withJSONObject: [ticker0.json, ticker1.json])
         let responseWith200StatusCode = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
         client.result = .success((validJSON, responseWith200StatusCode))
         
-        await expect(sut, toDeliver: .success([ticker0, ticker1]))
+        await expect(sut, toDeliver: .success(tickers))
     }
     
     // MARK: - Helpers
