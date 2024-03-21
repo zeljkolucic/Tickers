@@ -19,10 +19,25 @@ final class RemoteTickerRepositoryTests: XCTestCase {
         let url = URL(string: "https://a-given-url.com")!
         let (sut, client) = makeSUT(url: url)
         
-        sut.load()
-        sut.load()
+        try? sut.load()
+        try? sut.load()
         
         XCTAssertEqual(client.requestedURLs, [url, url])
+    }
+    
+    func test_load_deliversErrorOnClientError() {
+        let (sut, client) = makeSUT()
+        let error = NSError(domain: "any error", code: 0)
+        client.error = error
+        
+        do {
+            try sut.load()
+            XCTFail("Expected to deliver error on client error")
+        } catch let error as RemoteTickerRepository.Error {
+            XCTAssertEqual(error, .connectivity)
+        } catch {
+            XCTFail("Expected to deliver connectivity error, got \(error) instead")
+        }
     }
     
     // MARK: - Helpers
@@ -35,9 +50,13 @@ final class RemoteTickerRepositoryTests: XCTestCase {
     
     private final class HTTPClientSpy: HTTPClient {
         var requestedURLs = [URL]()
+        var error: Error?
         
-        func get(from url: URL) {
+        func get(from url: URL) throws {
             requestedURLs.append(url)
+            if let error {
+                throw error
+            }
         }
     }
 }
