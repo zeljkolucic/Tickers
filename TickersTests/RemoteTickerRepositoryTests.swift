@@ -19,7 +19,7 @@ final class RemoteTickerRepository {
     private let client: HTTPClient
     private let url: URL
     
-    init(client: HTTPClient, url: URL = URL(string: "https://a-url.com")!) {
+    init(client: HTTPClient, url: URL) {
         self.client = client
         self.url = url
     }
@@ -31,16 +31,13 @@ final class RemoteTickerRepository {
 
 final class RemoteTickerRepositoryTests: XCTestCase {
     func test_init_doesNotRequestDataFromURL() {
-        let client = HTTPClientSpy()
-        _ = RemoteTickerRepository(client: client)
+        let (_, client) = makeSUT()
         
         XCTAssertTrue(client.requestedURLs.isEmpty)
     }
     
     func test_load_requestsDataFromURL() {
-        let client = HTTPClientSpy()
-        let url = URL(string: "https://a-url.com")!
-        let sut = RemoteTickerRepository(client: client, url: url)
+        let (sut, client) = makeSUT(url: URL(string: "https://a-given-url.com")!)
         
         sut.load()
         
@@ -48,6 +45,12 @@ final class RemoteTickerRepositoryTests: XCTestCase {
     }
     
     // MARK: - Helpers
+    
+    private func makeSUT(url: URL = URL(string: "https://a-url.com")!) -> (sut: RemoteTickerRepository, client: HTTPClientSpy) {
+        let client = HTTPClientSpy()
+        let sut = RemoteTickerRepository(client: client, url: url)
+        return (sut, client)
+    }
     
     private final class HTTPClientSpy: HTTPClient {
         var requestedURLs = [URL]()
