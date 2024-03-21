@@ -16,7 +16,7 @@ final class RemoteTickerRepositoryTests: XCTestCase {
     }
     
     func test_loadTwice_requestsDataFromURLTwice() async {
-        let url = URL(string: "https://a-given-url.com")!
+        let url = anyURL
         let (sut, client) = makeSUT(url: url)
         
         do {
@@ -31,8 +31,7 @@ final class RemoteTickerRepositoryTests: XCTestCase {
     
     func test_load_deliversErrorOnClientError() async {
         let (sut, client) = makeSUT()
-        let error = NSError(domain: "any error", code: 0)
-        client.result = .failure(error)
+        client.result = .failure(anyError)
         
         do {
             try await sut.load()
@@ -45,18 +44,23 @@ final class RemoteTickerRepositoryTests: XCTestCase {
     }
     
     func test_load_deliversErrorOnNon200HTTPResponse() async {
-        let url = URL(string: "https://a-url.com")!
+        let url = anyURL
         let (sut, client) = makeSUT(url: url)
-        let non200HTTPResponse = HTTPURLResponse(url: url, statusCode: 199, httpVersion: nil, headerFields: nil)!
-        client.result = .success(non200HTTPResponse)
         
-        do {
-            try await sut.load()
-            XCTFail("Expected to deliver error on non-200 HTTP repsponse")
-        } catch let error as RemoteTickerRepository.Error {
-            XCTAssertEqual(error, .invalidData)
-        } catch {
-            XCTFail("Expected to deliver invalid data error, got \(error) instead")
+        [199, 300, 400, 500].forEach { statusCode in
+            let non200HTTPResponse = HTTPURLResponse(url: url, statusCode: statusCode, httpVersion: nil, headerFields: nil)!
+            client.result = .success(non200HTTPResponse)
+            
+            Task {
+                do {
+                    try await sut.load()
+                    XCTFail("Expected to deliver error on non-200 HTTP repsponse")
+                } catch let error as RemoteTickerRepository.Error {
+                    XCTAssertEqual(error, .invalidData)
+                } catch {
+                    XCTFail("Expected to deliver invalid data error, got \(error) instead")
+                }
+            }
         }
     }
     
