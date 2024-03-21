@@ -16,11 +16,22 @@ final class RemoteTickerRepositoryTests: XCTestCase {
     }
     
     func test_load_requestsDataFromURL() {
-        let (sut, client) = makeSUT(url: URL(string: "https://a-given-url.com")!)
+        let url = URL(string: "https://a-given-url.com")!
+        let (sut, client) = makeSUT(url: url)
         
         sut.load()
         
         XCTAssertFalse(client.requestedURLs.isEmpty)
+    }
+    
+    func test_loadTwice_requestsDataFromURLTwice() {
+        let url = URL(string: "https://a-given-url.com")!
+        let (sut, client) = makeSUT(url: url)
+        
+        sut.load()
+        sut.load()
+        
+        XCTAssertEqual(client.requestedURLs, [url, url])
     }
     
     // MARK: - Helpers
