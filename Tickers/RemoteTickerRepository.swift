@@ -21,12 +21,53 @@ public final class RemoteTickerRepository {
         self.url = url
     }
     
+    private struct RemoteTicker: Decodable {
+        let symbol: Symbol
+        let bid: Float
+        let bidSize: Float
+        let ask: Float
+        let askSize: Float
+        let dailyChange: Float
+        let dailyChangeRelative: Float
+        let lastPrice: Float
+        let volume: Float
+        let high: Float
+        let low: Float
+        
+        init(from decoder: any Decoder) throws {
+            var container = try decoder.unkeyedContainer()
+            self.symbol = try container.decode(Symbol.self)
+            self.bid = try container.decode(Float.self)
+            self.bidSize = try container.decode(Float.self)
+            self.ask = try container.decode(Float.self)
+            self.askSize = try container.decode(Float.self)
+            self.dailyChange = try container.decode(Float.self)
+            self.dailyChangeRelative = try container.decode(Float.self)
+            self.lastPrice = try container.decode(Float.self)
+            self.volume = try container.decode(Float.self)
+            self.high = try container.decode(Float.self)
+            self.low = try container.decode(Float.self)
+        }
+        
+        var ticker: Ticker {
+            Ticker(name: name, lastPrice: lastPrice.formatted(.currency(code: symbol.currencyCode)), dailyChangeRelative: dailyChangeRelative)
+        }
+        
+        var name: String {
+            var name = symbol.rawValue.dropFirst().replacingOccurrences(of: "USD", with: "")
+            if name.hasSuffix(":") {
+                name.removeLast()
+            }
+            return name
+        }
+    }
+    
     public func load() async throws {
-        guard let response = try? await client.get(from: url) else {
+        guard let (data, response) = try? await client.get(from: url) else {
             throw Error.connectivity
         }
         
-        guard (200..<300).contains(response.statusCode) else {
+        guard (200..<300).contains(response.statusCode), let tickers = try? JSONDecoder().decode([RemoteTicker].self, from: data) else {
             throw Error.invalidData
         }
     }

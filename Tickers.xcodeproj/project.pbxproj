@@ -15,6 +15,8 @@
 		E45BA7172BAC4FBC009765E4 /* RemoteTickerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7162BAC4FBC009765E4 /* RemoteTickerRepository.swift */; };
 		E45BA7192BAC4FDE009765E4 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7182BAC4FDE009765E4 /* HTTPClient.swift */; };
 		E45BA71C2BAC5CC4009765E4 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA71B2BAC5CC4009765E4 /* Helpers.swift */; };
+		E45BA71E2BAC64DA009765E4 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA71D2BAC64DA009765E4 /* Ticker.swift */; };
+		E45BA7202BAC6532009765E4 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA71F2BAC6532009765E4 /* Symbol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		E45BA7162BAC4FBC009765E4 /* RemoteTickerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTickerRepository.swift; sourceTree = "<group>"; };
 		E45BA7182BAC4FDE009765E4 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		E45BA71B2BAC5CC4009765E4 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		E45BA71D2BAC64DA009765E4 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
+		E45BA71F2BAC6532009765E4 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				E45BA6FD2BAC0F28009765E4 /* Assets.xcassets */,
 				E45BA6FF2BAC0F28009765E4 /* Preview Content */,
 				E45BA7162BAC4FBC009765E4 /* RemoteTickerRepository.swift */,
+				E45BA71D2BAC64DA009765E4 /* Ticker.swift */,
+				E45BA71F2BAC6532009765E4 /* Symbol.swift */,
 				E45BA7182BAC4FDE009765E4 /* HTTPClient.swift */,
 			);
 			path = Tickers;
@@ -217,8 +223,10 @@
 			files = (
 				E45BA6FC2BAC0F26009765E4 /* ContentView.swift in Sources */,
 				E45BA6FA2BAC0F26009765E4 /* TickersApp.swift in Sources */,
+				E45BA71E2BAC64DA009765E4 /* Ticker.swift in Sources */,
 				E45BA7192BAC4FDE009765E4 /* HTTPClient.swift in Sources */,
 				E45BA7172BAC4FBC009765E4 /* RemoteTickerRepository.swift in Sources */,
+				E45BA7202BAC6532009765E4 /* Symbol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

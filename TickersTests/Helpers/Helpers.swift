@@ -15,6 +15,10 @@ var anyURL: URL {
     URL(string: "https://any-url.com")!
 }
 
+var anyData: Data {
+    Data()
+}
+
 var anyHTTPURLResponse: HTTPURLResponse {
     HTTPURLResponse(url: anyURL, statusCode: 200, httpVersion: nil, headerFields: nil)!
 }
