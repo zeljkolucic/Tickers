@@ -20,6 +20,7 @@
 		E45BA7222BACE8BE009765E4 /* XCTestCase+trackForMemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7212BACE8BE009765E4 /* XCTestCase+trackForMemoryLeaks.swift */; };
 		E45BA7242BACE90C009765E4 /* Ticker+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7232BACE90C009765E4 /* Ticker+Equatable.swift */; };
 		E45BA7262BACE943009765E4 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7252BACE943009765E4 /* HTTPClientSpy.swift */; };
+		E45BA7282BACE9B1009765E4 /* TickerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7272BACE9B1009765E4 /* TickerRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		E45BA7212BACE8BE009765E4 /* XCTestCase+trackForMemoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+trackForMemoryLeaks.swift"; sourceTree = "<group>"; };
 		E45BA7232BACE90C009765E4 /* Ticker+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticker+Equatable.swift"; sourceTree = "<group>"; };
 		E45BA7252BACE943009765E4 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
+		E45BA7272BACE9B1009765E4 /* TickerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				E45BA6FD2BAC0F28009765E4 /* Assets.xcassets */,
 				E45BA6FF2BAC0F28009765E4 /* Preview Content */,
 				E45BA7162BAC4FBC009765E4 /* RemoteTickerRepository.swift */,
+				E45BA7272BACE9B1009765E4 /* TickerRepository.swift */,
 				E45BA71D2BAC64DA009765E4 /* Ticker.swift */,
 				E45BA71F2BAC6532009765E4 /* Symbol.swift */,
 				E45BA7182BAC4FDE009765E4 /* HTTPClient.swift */,
@@ -230,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E45BA7282BACE9B1009765E4 /* TickerRepository.swift in Sources */,
 				E45BA6FC2BAC0F26009765E4 /* ContentView.swift in Sources */,
 				E45BA6FA2BAC0F26009765E4 /* TickersApp.swift in Sources */,
 				E45BA71E2BAC64DA009765E4 /* Ticker.swift in Sources */,

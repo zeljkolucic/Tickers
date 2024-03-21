@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class RemoteTickerRepository {
+public final class RemoteTickerRepository: TickerRepository {
     private let client: HTTPClient
     private let url: URL
     

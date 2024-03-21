@@ -108,7 +108,7 @@ final class RemoteTickerRepositoryTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func expect(_ sut: RemoteTickerRepository, toDeliver expectedResult: Result<[Ticker], RemoteTickerRepository.Error>, file: StaticString = #filePath, line: UInt = #line) async {
+    private func expect(_ sut: TickerRepository, toDeliver expectedResult: Result<[Ticker], RemoteTickerRepository.Error>, file: StaticString = #filePath, line: UInt = #line) async {
         var retrievedResult: Result<[Ticker], NSError>?
         
         do {
@@ -146,13 +146,11 @@ final class RemoteTickerRepositoryTests: XCTestCase {
         return (model, json)
     }
     
-    private func makeSUT(url: URL = anyURL, file: StaticString = #filePath, line: UInt = #line) -> (sut: RemoteTickerRepository, client: HTTPClientSpy) {
+    private func makeSUT(url: URL = anyURL, file: StaticString = #filePath, line: UInt = #line) -> (sut: TickerRepository, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
         let sut = RemoteTickerRepository(client: client, url: url)
         trackForMemoryLeaks(client)
         trackForMemoryLeaks(sut)
         return (sut, client)
     }
-    
-    
 }
