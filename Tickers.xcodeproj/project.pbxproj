@@ -11,7 +11,18 @@
 		E45BA6FC2BAC0F26009765E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA6FB2BAC0F26009765E4 /* ContentView.swift */; };
 		E45BA6FE2BAC0F28009765E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45BA6FD2BAC0F28009765E4 /* Assets.xcassets */; };
 		E45BA7012BAC0F28009765E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45BA7002BAC0F28009765E4 /* Preview Assets.xcassets */; };
+		E45BA7152BAC488B009765E4 /* RemoteTickerRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7142BAC488B009765E4 /* RemoteTickerRepositoryTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E45BA70F2BAC482F009765E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E45BA6EE2BAC0F26009765E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E45BA6F52BAC0F26009765E4;
+			remoteInfo = Tickers;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E45BA6F62BAC0F26009765E4 /* Tickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tickers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,10 +30,19 @@
 		E45BA6FB2BAC0F26009765E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E45BA6FD2BAC0F28009765E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E45BA7002BAC0F28009765E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E45BA70B2BAC482E009765E4 /* TickersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TickersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E45BA7142BAC488B009765E4 /* RemoteTickerRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTickerRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E45BA6F32BAC0F26009765E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E45BA7082BAC482E009765E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				E45BA6F82BAC0F26009765E4 /* Tickers */,
+				E45BA70C2BAC482F009765E4 /* TickersTests */,
 				E45BA6F72BAC0F26009765E4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				E45BA6F62BAC0F26009765E4 /* Tickers.app */,
+				E45BA70B2BAC482E009765E4 /* TickersTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +89,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		E45BA70C2BAC482F009765E4 /* TickersTests */ = {
+			isa = PBXGroup;
+			children = (
+				E45BA7142BAC488B009765E4 /* RemoteTickerRepositoryTests.swift */,
+			);
+			path = TickersTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -87,6 +117,24 @@
 			productReference = E45BA6F62BAC0F26009765E4 /* Tickers.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E45BA70A2BAC482E009765E4 /* TickersTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E45BA7112BAC482F009765E4 /* Build configuration list for PBXNativeTarget "TickersTests" */;
+			buildPhases = (
+				E45BA7072BAC482E009765E4 /* Sources */,
+				E45BA7082BAC482E009765E4 /* Frameworks */,
+				E45BA7092BAC482E009765E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E45BA7102BAC482F009765E4 /* PBXTargetDependency */,
+			);
+			name = TickersTests;
+			productName = TickersTests;
+			productReference = E45BA70B2BAC482E009765E4 /* TickersTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +147,11 @@
 				TargetAttributes = {
 					E45BA6F52BAC0F26009765E4 = {
 						CreatedOnToolsVersion = 15.3;
+					};
+					E45BA70A2BAC482E009765E4 = {
+						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
+						TestTargetID = E45BA6F52BAC0F26009765E4;
 					};
 				};
 			};
@@ -116,6 +169,7 @@
 			projectRoot = "";
 			targets = (
 				E45BA6F52BAC0F26009765E4 /* Tickers */,
+				E45BA70A2BAC482E009765E4 /* TickersTests */,
 			);
 		};
 /* End PBXProject section */
@@ -127,6 +181,13 @@
 			files = (
 				E45BA7012BAC0F28009765E4 /* Preview Assets.xcassets in Resources */,
 				E45BA6FE2BAC0F28009765E4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E45BA7092BAC482E009765E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +203,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E45BA7072BAC482E009765E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E45BA7152BAC488B009765E4 /* RemoteTickerRepositoryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E45BA7102BAC482F009765E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E45BA6F52BAC0F26009765E4 /* Tickers */;
+			targetProxy = E45BA70F2BAC482F009765E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E45BA7022BAC0F28009765E4 /* Debug */ = {
@@ -284,9 +361,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = zeljkolucic.Tickers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -313,12 +395,66 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = zeljkolucic.Tickers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E45BA7122BAC482F009765E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WHP9Z6BC8S;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = zeljkolucic.TickersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tickers.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tickers";
+			};
+			name = Debug;
+		};
+		E45BA7132BAC482F009765E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WHP9Z6BC8S;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = zeljkolucic.TickersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tickers.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tickers";
 			};
 			name = Release;
 		};
@@ -339,6 +475,15 @@
 			buildConfigurations = (
 				E45BA7052BAC0F28009765E4 /* Debug */,
 				E45BA7062BAC0F28009765E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E45BA7112BAC482F009765E4 /* Build configuration list for PBXNativeTarget "TickersTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E45BA7122BAC482F009765E4 /* Debug */,
+				E45BA7132BAC482F009765E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
