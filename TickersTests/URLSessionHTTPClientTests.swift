@@ -5,27 +5,8 @@
 //  Created by Zeljko Lucic on 21.3.24..
 //
 
+import Tickers
 import XCTest
-
-final class URLSessionHTTPClient {
-    private let session: URLSession
-    
-    init(session: URLSession = .shared) {
-        self.session = session
-    }
-    
-    private struct UnexpectedValuesRepresentation: Error {}
-    
-    func get(from url: URL) async throws -> (Data, HTTPURLResponse) {
-        let (data, response) = try await session.data(from: url)
-        
-        guard let response = response as? HTTPURLResponse else {
-            throw UnexpectedValuesRepresentation()
-        }
-        
-        return (data, response)
-    }
-}
 
 final class URLSessionHTTPClientTests: XCTestCase {
     override func setUp() {
