@@ -14,6 +14,10 @@ final class TickersViewModel {
     init(tickerRepository: TickerRepository) {
         self.tickerRepository = tickerRepository
     }
+    
+    func load() {
+        
+    }
 }
 
 final class TickersViewModelTests: XCTestCase {

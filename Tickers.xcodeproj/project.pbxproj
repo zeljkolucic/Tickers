@@ -25,6 +25,7 @@
 		E45CA42F2BAD8766005F8285 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45CA42E2BAD8766005F8285 /* URLProtocolStub.swift */; };
 		E4C7E4A12BAD8D3200A7F151 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4A02BAD8D3200A7F151 /* URLSessionHTTPClient.swift */; };
 		E4C7E4A32BAD8DF200A7F151 /* TickersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4A22BAD8DF200A7F151 /* TickersViewModelTests.swift */; };
+		E4C7E4A52BAD935400A7F151 /* TickersEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4A42BAD935400A7F151 /* TickersEndpointTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		E45CA42E2BAD8766005F8285 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		E4C7E4A02BAD8D3200A7F151 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		E4C7E4A22BAD8DF200A7F151 /* TickersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersViewModelTests.swift; sourceTree = "<group>"; };
+		E4C7E4A42BAD935400A7F151 /* TickersEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersEndpointTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				E45BA7292BACEB7D009765E4 /* URLSessionHTTPClientTests.swift */,
 				E45CA42E2BAD8766005F8285 /* URLProtocolStub.swift */,
 				E4C7E4A22BAD8DF200A7F151 /* TickersViewModelTests.swift */,
+				E4C7E4A42BAD935400A7F151 /* TickersEndpointTests.swift */,
 			);
 			path = TickersTests;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				E45BA7152BAC488B009765E4 /* RemoteTickerRepositoryTests.swift in Sources */,
 				E45BA7242BACE90C009765E4 /* Ticker+Equatable.swift in Sources */,
 				E45BA71C2BAC5CC4009765E4 /* Helpers.swift in Sources */,
+				E4C7E4A52BAD935400A7F151 /* TickersEndpointTests.swift in Sources */,
 				E45BA7262BACE943009765E4 /* HTTPClientSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
