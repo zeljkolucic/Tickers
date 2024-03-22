@@ -9,14 +9,20 @@ import Tickers
 import XCTest
 
 final class TickersViewModel {
+    var message: String?
+    
     private let tickerRepository: TickerRepository
     
     init(tickerRepository: TickerRepository) {
         self.tickerRepository = tickerRepository
     }
     
-    func load() {
-        
+    func load() async {
+        do {
+            _ = try await tickerRepository.load()
+        } catch {
+            message = "An error occurred. Please try again."
+        }
     }
 }
 
@@ -25,6 +31,15 @@ final class TickersViewModelTests: XCTestCase {
         let (_, repository) = makeSUT()
         
         XCTAssertEqual(repository.loadCallCount, 0)
+    }
+    
+    func test_load_deliversErrorMessageOnLoadFailure() async {
+        let (sut, repository) = makeSUT()
+        repository.stub(error: anyError())
+        
+        await sut.load()
+        
+        XCTAssertEqual(sut.message, "An error occurred. Please try again.")
     }
     
     // MARK: - Helpers
@@ -39,9 +54,17 @@ final class TickersViewModelTests: XCTestCase {
     
     private class TickerRepositorySpy: TickerRepository {
         var loadCallCount = 0
+        private var error: Error?
+        
+        func stub(error: Error) {
+            self.error = error
+        }
         
         func load() async throws -> [Ticker] {
             loadCallCount += 1
+            if let error {
+                throw error
+            }
             return []
         }
     }
