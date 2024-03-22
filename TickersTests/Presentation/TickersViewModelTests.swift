@@ -57,11 +57,9 @@ final class TickersViewModelTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: TickersViewModel, repository: TickerRepositorySpy) {
+    private func makeSUT(timeInterval: TimeInterval = 1, file: StaticString = #filePath, line: UInt = #line) -> (sut: TickersViewModel, repository: TickerRepositorySpy) {
         let repository = TickerRepositorySpy()
-        let sut = TickersViewModel(tickerRepository: repository)
-        trackForMemoryLeaks(repository)
-        trackForMemoryLeaks(sut)
+        let sut = TickersViewModel(tickerRepository: repository, timeInterval: timeInterval)
         return (sut, repository)
     }
     

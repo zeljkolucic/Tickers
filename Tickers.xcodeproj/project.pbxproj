@@ -109,20 +109,12 @@
 		E45BA6F82BAC0F26009765E4 /* Tickers */ = {
 			isa = PBXGroup;
 			children = (
-				E45BA6F92BAC0F26009765E4 /* TickersApp.swift */,
-				E45BA6FB2BAC0F26009765E4 /* ContentView.swift */,
-				E45BA6FD2BAC0F28009765E4 /* Assets.xcassets */,
-				E45BA6FF2BAC0F28009765E4 /* Preview Content */,
-				E45BA7162BAC4FBC009765E4 /* RemoteTickerRepository.swift */,
-				E45BA7272BACE9B1009765E4 /* TickerRepository.swift */,
-				E45BA71D2BAC64DA009765E4 /* Ticker.swift */,
-				E45BA71F2BAC6532009765E4 /* Symbol.swift */,
-				E45BA7182BAC4FDE009765E4 /* HTTPClient.swift */,
-				E4C7E4A02BAD8D3200A7F151 /* URLSessionHTTPClient.swift */,
-				E4C7E4A62BAD964B00A7F151 /* TickersEndpoint.swift */,
-				E4C7E4A82BAD9B6E00A7F151 /* TickersViewModel.swift */,
-				E4C7E4AA2BAD9BAF00A7F151 /* Localizable.swift */,
-				E4C7E4AC2BAD9C0C00A7F151 /* Localizable.xcstrings */,
+				E4C7E4B12BADB16700A7F151 /* Infrastructure */,
+				E4C7E4B02BADB15900A7F151 /* API */,
+				E4C7E4AE2BADB10D00A7F151 /* Domain */,
+				E4C7E4AF2BADB14F00A7F151 /* Presentation */,
+				E4C7E4B22BADB1A400A7F151 /* UI */,
+				E4C7E4B32BADB1BF00A7F151 /* Main */,
 			);
 			path = Tickers;
 			sourceTree = "<group>";
@@ -139,11 +131,9 @@
 			isa = PBXGroup;
 			children = (
 				E45BA71A2BAC5CBB009765E4 /* Helpers */,
-				E45BA7142BAC488B009765E4 /* RemoteTickerRepositoryTests.swift */,
-				E45BA7292BACEB7D009765E4 /* URLSessionHTTPClientTests.swift */,
-				E45CA42E2BAD8766005F8285 /* URLProtocolStub.swift */,
-				E4C7E4A22BAD8DF200A7F151 /* TickersViewModelTests.swift */,
-				E4C7E4A42BAD935400A7F151 /* TickersEndpointTests.swift */,
+				E4C7E4B42BADB1E700A7F151 /* Infrastructure */,
+				E4C7E4B62BADB21600A7F151 /* API */,
+				E4C7E4B72BADB21E00A7F151 /* Presentation */,
 			);
 			path = TickersTests;
 			sourceTree = "<group>";
@@ -154,9 +144,99 @@
 				E45BA71B2BAC5CC4009765E4 /* Helpers.swift */,
 				E45BA7212BACE8BE009765E4 /* XCTestCase+trackForMemoryLeaks.swift */,
 				E45BA7232BACE90C009765E4 /* Ticker+Equatable.swift */,
-				E45BA7252BACE943009765E4 /* HTTPClientSpy.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E4C7E4AE2BADB10D00A7F151 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E45BA7272BACE9B1009765E4 /* TickerRepository.swift */,
+				E45BA71D2BAC64DA009765E4 /* Ticker.swift */,
+				E45BA71F2BAC6532009765E4 /* Symbol.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E4C7E4AF2BADB14F00A7F151 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E4C7E4AA2BAD9BAF00A7F151 /* Localizable.swift */,
+				E4C7E4AC2BAD9C0C00A7F151 /* Localizable.xcstrings */,
+				E4C7E4A82BAD9B6E00A7F151 /* TickersViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		E4C7E4B02BADB15900A7F151 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E45BA7182BAC4FDE009765E4 /* HTTPClient.swift */,
+				E45BA7162BAC4FBC009765E4 /* RemoteTickerRepository.swift */,
+				E4C7E4A62BAD964B00A7F151 /* TickersEndpoint.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		E4C7E4B12BADB16700A7F151 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				E4C7E4A02BAD8D3200A7F151 /* URLSessionHTTPClient.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		E4C7E4B22BADB1A400A7F151 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E45BA6FF2BAC0F28009765E4 /* Preview Content */,
+				E45BA6FD2BAC0F28009765E4 /* Assets.xcassets */,
+				E45BA6FB2BAC0F26009765E4 /* ContentView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E4C7E4B32BADB1BF00A7F151 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E45BA6F92BAC0F26009765E4 /* TickersApp.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E4C7E4B42BADB1E700A7F151 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				E4C7E4B52BADB1F200A7F151 /* Helpers */,
+				E45BA7292BACEB7D009765E4 /* URLSessionHTTPClientTests.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		E4C7E4B52BADB1F200A7F151 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E45CA42E2BAD8766005F8285 /* URLProtocolStub.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E4C7E4B62BADB21600A7F151 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E45BA7252BACE943009765E4 /* HTTPClientSpy.swift */,
+				E45BA7142BAC488B009765E4 /* RemoteTickerRepositoryTests.swift */,
+				E4C7E4A42BAD935400A7F151 /* TickersEndpointTests.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		E4C7E4B72BADB21E00A7F151 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E4C7E4A22BAD8DF200A7F151 /* TickersViewModelTests.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,7 +508,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Tickers/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Tickers/UI/Preview Content\"";
 				DEVELOPMENT_TEAM = WHP9Z6BC8S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -462,7 +542,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Tickers/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Tickers/UI/Preview Content\"";
 				DEVELOPMENT_TEAM = WHP9Z6BC8S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
