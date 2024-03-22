@@ -30,6 +30,7 @@
 		E4C7E4A92BAD9B6E00A7F151 /* TickersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4A82BAD9B6E00A7F151 /* TickersViewModel.swift */; };
 		E4C7E4AB2BAD9BAF00A7F151 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4AA2BAD9BAF00A7F151 /* Localizable.swift */; };
 		E4C7E4AD2BAD9C0C00A7F151 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E4C7E4AC2BAD9C0C00A7F151 /* Localizable.xcstrings */; };
+		E4C7E4B92BADCC8500A7F151 /* TickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4B82BADCC8500A7F151 /* TickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		E4C7E4A82BAD9B6E00A7F151 /* TickersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersViewModel.swift; sourceTree = "<group>"; };
 		E4C7E4AA2BAD9BAF00A7F151 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		E4C7E4AC2BAD9C0C00A7F151 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		E4C7E4B82BADCC8500A7F151 /* TickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 				E45BA6FF2BAC0F28009765E4 /* Preview Content */,
 				E45BA6FD2BAC0F28009765E4 /* Assets.xcassets */,
 				E45BA6FB2BAC0F26009765E4 /* ContentView.swift */,
+				E4C7E4B82BADCC8500A7F151 /* TickerView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				E45BA6FA2BAC0F26009765E4 /* TickersApp.swift in Sources */,
 				E4C7E4A12BAD8D3200A7F151 /* URLSessionHTTPClient.swift in Sources */,
 				E45BA71E2BAC64DA009765E4 /* Ticker.swift in Sources */,
+				E4C7E4B92BADCC8500A7F151 /* TickerView.swift in Sources */,
 				E45BA7192BAC4FDE009765E4 /* HTTPClient.swift in Sources */,
 				E45BA7172BAC4FBC009765E4 /* RemoteTickerRepository.swift in Sources */,
 				E45BA7202BAC6532009765E4 /* Symbol.swift in Sources */,

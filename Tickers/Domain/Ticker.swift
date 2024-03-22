@@ -12,6 +12,18 @@ public struct Ticker {
     public let lastPrice: Float
     public let dailyChangeRelative: Float
     
+    var price: String {
+        lastPrice.formatted(.currency(code: "USD"))
+    }
+    
+    var dailyChangePercentage: String {
+        let formatter = NumberFormatter()
+        formatter.positivePrefix = "+"
+        formatter.numberStyle = .percent
+        let numberToFormat = NSNumber(value: dailyChangeRelative)
+        return formatter.string(from: numberToFormat) ?? String(dailyChangeRelative)
+    }
+    
     public init(name: String, lastPrice: Float, dailyChangeRelative: Float) {
         self.name = name
         self.lastPrice = lastPrice
