@@ -20,7 +20,7 @@ public final class TickersViewModel {
         do {
             _ = try await tickerRepository.load()
         } catch {
-            message = "An error occurred. Please try again."
+            message = Localizable.Error.message.localized
         }
     }
 }

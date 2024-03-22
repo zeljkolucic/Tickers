@@ -28,6 +28,8 @@
 		E4C7E4A52BAD935400A7F151 /* TickersEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4A42BAD935400A7F151 /* TickersEndpointTests.swift */; };
 		E4C7E4A72BAD964B00A7F151 /* TickersEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4A62BAD964B00A7F151 /* TickersEndpoint.swift */; };
 		E4C7E4A92BAD9B6E00A7F151 /* TickersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4A82BAD9B6E00A7F151 /* TickersViewModel.swift */; };
+		E4C7E4AB2BAD9BAF00A7F151 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4AA2BAD9BAF00A7F151 /* Localizable.swift */; };
+		E4C7E4AD2BAD9C0C00A7F151 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E4C7E4AC2BAD9C0C00A7F151 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		E4C7E4A42BAD935400A7F151 /* TickersEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersEndpointTests.swift; sourceTree = "<group>"; };
 		E4C7E4A62BAD964B00A7F151 /* TickersEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersEndpoint.swift; sourceTree = "<group>"; };
 		E4C7E4A82BAD9B6E00A7F151 /* TickersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersViewModel.swift; sourceTree = "<group>"; };
+		E4C7E4AA2BAD9BAF00A7F151 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		E4C7E4AC2BAD9C0C00A7F151 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 				E4C7E4A02BAD8D3200A7F151 /* URLSessionHTTPClient.swift */,
 				E4C7E4A62BAD964B00A7F151 /* TickersEndpoint.swift */,
 				E4C7E4A82BAD9B6E00A7F151 /* TickersViewModel.swift */,
+				E4C7E4AA2BAD9BAF00A7F151 /* Localizable.swift */,
+				E4C7E4AC2BAD9C0C00A7F151 /* Localizable.xcstrings */,
 			);
 			path = Tickers;
 			sourceTree = "<group>";
@@ -237,6 +243,7 @@
 			files = (
 				E45BA7012BAC0F28009765E4 /* Preview Assets.xcassets in Resources */,
 				E45BA6FE2BAC0F28009765E4 /* Assets.xcassets in Resources */,
+				E4C7E4AD2BAD9C0C00A7F151 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4C7E4AB2BAD9BAF00A7F151 /* Localizable.swift in Sources */,
 				E45BA7282BACE9B1009765E4 /* TickerRepository.swift in Sources */,
 				E45BA6FC2BAC0F26009765E4 /* ContentView.swift in Sources */,
 				E4C7E4A92BAD9B6E00A7F151 /* TickersViewModel.swift in Sources */,
