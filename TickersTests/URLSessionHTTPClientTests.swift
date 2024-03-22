@@ -53,6 +53,16 @@ final class URLSessionHTTPClientTests: XCTestCase {
         }
     }
     
+    func test_get_failsOnAllInvalidRepresentationCases() async {
+        await assertResultErrorNotNil(data: nil, response: nonHTTPURLResponse(), error: nil)
+        await assertResultErrorNotNil(data: anyData(), response: nil, error: anyError())
+        await assertResultErrorNotNil(data: nil, response: nonHTTPURLResponse(), error: anyError())
+        await assertResultErrorNotNil(data: nil, response: anyHTTPURLResponse(), error: anyError())
+        await assertResultErrorNotNil(data: anyData(), response: nonHTTPURLResponse(), error: anyError())
+        await assertResultErrorNotNil(data: anyData(), response: anyHTTPURLResponse(), error: anyError())
+        await assertResultErrorNotNil(data: anyData(), response: nonHTTPURLResponse(), error: nil)
+    }
+    
     func test_get_succeedsOnHTTPURLResponseWithData() async {
         let data = anyData()
         let response = anyHTTPURLResponse()
@@ -90,5 +100,37 @@ final class URLSessionHTTPClientTests: XCTestCase {
         let sut = URLSessionHTTPClient(session: session)
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
+    }
+    
+    private func assertResultErrorNotNil(data: Data?, response: URLResponse?, error: Error?, file: StaticString = #filePath, line: UInt = #line) async {
+        let resultError = await resultErrorFor((data: data, response: response, error: error))
+        XCTAssertNotNil(resultError, file: file, line: line)
+    }
+    
+    private func resultErrorFor(_ values: (data: Data?, response: URLResponse?, error: Error?)? = nil, file: StaticString = #file, line: UInt = #line) async -> Error? {
+        let result = await resultFor(values, file: file, line: line)
+        
+        switch result {
+        case let .failure(error):
+            return error
+        default:
+            XCTFail("Expected failure, got \(result) instead.", file: file, line: line)
+            return nil
+        }
+    }
+    
+    private func resultFor(_ values: (data: Data?, response: URLResponse?, error: Error?)?, file: StaticString = #file, line: UInt = #line) async -> Result<(Data, HTTPURLResponse), Error> {
+        values.map { URLProtocolStub.stub(data: $0, response: $1, error: $2) }
+        
+        let sut = makeSUT(file: file, line: line)
+        
+        var receivedResult: Result<(Data, HTTPURLResponse), Error>!
+        do {
+            let (data, response) = try await sut.get(from: anyURL())
+            receivedResult = .success((data, response))
+        } catch {
+            receivedResult = .failure(error)
+        }
+        return receivedResult
     }
 }
