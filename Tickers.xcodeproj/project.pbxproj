@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E45BA6FA2BAC0F26009765E4 /* TickersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA6F92BAC0F26009765E4 /* TickersApp.swift */; };
-		E45BA6FC2BAC0F26009765E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA6FB2BAC0F26009765E4 /* ContentView.swift */; };
+		E45BA6FC2BAC0F26009765E4 /* TickersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA6FB2BAC0F26009765E4 /* TickersListView.swift */; };
 		E45BA6FE2BAC0F28009765E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45BA6FD2BAC0F28009765E4 /* Assets.xcassets */; };
 		E45BA7012BAC0F28009765E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45BA7002BAC0F28009765E4 /* Preview Assets.xcassets */; };
 		E45BA7152BAC488B009765E4 /* RemoteTickerRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7142BAC488B009765E4 /* RemoteTickerRepositoryTests.swift */; };
@@ -46,7 +46,7 @@
 /* Begin PBXFileReference section */
 		E45BA6F62BAC0F26009765E4 /* Tickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tickers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45BA6F92BAC0F26009765E4 /* TickersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersApp.swift; sourceTree = "<group>"; };
-		E45BA6FB2BAC0F26009765E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E45BA6FB2BAC0F26009765E4 /* TickersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersListView.swift; sourceTree = "<group>"; };
 		E45BA6FD2BAC0F28009765E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E45BA7002BAC0F28009765E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E45BA70B2BAC482E009765E4 /* TickersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TickersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,7 +193,7 @@
 			children = (
 				E45BA6FF2BAC0F28009765E4 /* Preview Content */,
 				E45BA6FD2BAC0F28009765E4 /* Assets.xcassets */,
-				E45BA6FB2BAC0F26009765E4 /* ContentView.swift */,
+				E45BA6FB2BAC0F26009765E4 /* TickersListView.swift */,
 				E4C7E4B82BADCC8500A7F151 /* TickerView.swift */,
 			);
 			path = UI;
@@ -346,7 +346,7 @@
 			files = (
 				E4C7E4AB2BAD9BAF00A7F151 /* Localizable.swift in Sources */,
 				E45BA7282BACE9B1009765E4 /* TickerRepository.swift in Sources */,
-				E45BA6FC2BAC0F26009765E4 /* ContentView.swift in Sources */,
+				E45BA6FC2BAC0F26009765E4 /* TickersListView.swift in Sources */,
 				E4C7E4A92BAD9B6E00A7F151 /* TickersViewModel.swift in Sources */,
 				E4C7E4A72BAD964B00A7F151 /* TickersEndpoint.swift in Sources */,
 				E45BA6FA2BAC0F26009765E4 /* TickersApp.swift in Sources */,

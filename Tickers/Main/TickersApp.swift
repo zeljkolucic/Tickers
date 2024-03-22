@@ -16,7 +16,7 @@ struct TickersApp: App {
         WindowGroup {
             let url = TickersEndpoint.get(Symbol.allCases.map { $0.rawValue }).url(from: baseURL)
             let viewModel = TickersViewModel(tickerRepository: RemoteTickerRepository(client: URLSessionHTTPClient(), url: url), timeInterval: timeInterval)
-            ContentView()
+            TickersListView(viewModel: viewModel)
         }
     }
 }

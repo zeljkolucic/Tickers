@@ -5,12 +5,12 @@
 //  Created by Zeljko Lucic on 22.3.24..
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
-public final class TickersViewModel {
-    public var message: String?
-    public var tickers = [Ticker]()
+public final class TickersViewModel: ObservableObject {
+    @Published public var message: String?
+    @Published public var tickers = [Ticker]()
     
     private var timerCancellable: AnyCancellable?
     
@@ -20,7 +20,6 @@ public final class TickersViewModel {
     public init(tickerRepository: TickerRepository, timeInterval: TimeInterval) {
         self.tickerRepository = tickerRepository
         self.timeInterval = timeInterval
-        loadAtTimeIntervals()
     }
     
     public func load() async {

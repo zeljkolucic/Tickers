@@ -7,10 +7,14 @@
 
 import Foundation
 
-public struct Ticker {
+public struct Ticker: Identifiable {
     public let name: String
     public let lastPrice: Float
     public let dailyChangeRelative: Float
+    
+    public var id: String {
+        name
+    }
     
     var price: String {
         lastPrice.formatted(.currency(code: "USD"))
