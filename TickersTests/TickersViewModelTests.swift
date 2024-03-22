@@ -15,6 +15,15 @@ final class TickersViewModelTests: XCTestCase {
         XCTAssertEqual(repository.loadCallCount, 0)
     }
     
+    func test_loadTwice_loadsFromRepositoryTwice() async {
+        let (sut, repository) = makeSUT()
+        
+        await sut.load()
+        await sut.load()
+        
+        XCTAssertEqual(repository.loadCallCount, 2)
+    }
+    
     func test_load_deliversErrorMessageOnLoadFailure() async {
         let (sut, repository) = makeSUT()
         repository.stub(error: anyError())
