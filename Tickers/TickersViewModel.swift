@@ -19,7 +19,7 @@ public final class TickersViewModel {
     
     public func load() async {
         do {
-            _ = try await tickerRepository.load()
+            tickers = try await tickerRepository.load()
         } catch {
             message = Localizable.Error.message.localized
         }

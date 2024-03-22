@@ -43,6 +43,18 @@ final class TickersViewModelTests: XCTestCase {
         XCTAssertNil(sut.message)
     }
     
+    func test_load_deliversTickersOnSuccessfulLoad() async {
+        let (sut, repository) = makeSUT()
+        let ticker0 = Ticker(name: "BTC", lastPrice: 64714, dailyChangeRelative: -0.04482591)
+        let ticker1 = Ticker(name: "ETH", lastPrice: 3315.5, dailyChangeRelative: -0.06389407)
+        repository.stub(.success([ticker0, ticker1]))
+        
+        await sut.load()
+        
+        XCTAssertEqual(sut.tickers, [ticker0, ticker1])
+        XCTAssertNil(sut.message)
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: TickersViewModel, repository: TickerRepositorySpy) {
