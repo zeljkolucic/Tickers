@@ -8,24 +8,6 @@
 import Tickers
 import XCTest
 
-final class TickersViewModel {
-    var message: String?
-    
-    private let tickerRepository: TickerRepository
-    
-    init(tickerRepository: TickerRepository) {
-        self.tickerRepository = tickerRepository
-    }
-    
-    func load() async {
-        do {
-            _ = try await tickerRepository.load()
-        } catch {
-            message = "An error occurred. Please try again."
-        }
-    }
-}
-
 final class TickersViewModelTests: XCTestCase {
     func test_init_doesNotLoad() {
         let (_, repository) = makeSUT()
