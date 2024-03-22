@@ -7,18 +7,18 @@
 
 import Foundation
 
-var anyError: NSError {
+func anyError() -> NSError {
     NSError(domain: "any error", code: 0)
 }
 
-var anyURL: URL {
+func anyURL() -> URL {
     URL(string: "https://any-url.com")!
 }
 
-var anyData: Data {
+func anyData() -> Data {
     Data()
 }
 
-var anyHTTPURLResponse: HTTPURLResponse {
-    HTTPURLResponse(url: anyURL, statusCode: 200, httpVersion: nil, headerFields: nil)!
+func anyHTTPURLResponse() -> HTTPURLResponse {
+    HTTPURLResponse(url: anyURL(), statusCode: 200, httpVersion: nil, headerFields: nil)!
 }

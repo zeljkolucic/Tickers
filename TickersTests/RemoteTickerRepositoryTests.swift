@@ -16,7 +16,7 @@ final class RemoteTickerRepositoryTests: XCTestCase {
     }
     
     func test_loadTwice_requestsDataFromURLTwice() async {
-        let url = anyURL
+        let url = anyURL()
         let (sut, client) = makeSUT(url: url)
         
         _ = try? await sut.load()
@@ -27,18 +27,18 @@ final class RemoteTickerRepositoryTests: XCTestCase {
     
     func test_load_deliversErrorOnClientError() async {
         let (sut, client) = makeSUT()
-        client.stub(.failure(anyError))
+        client.stub(.failure(anyError()))
         
         await expect(sut, toDeliver: .failure(.connectivity))
     }
     
     func test_load_deliversErrorOnNon200HTTPResponse() async {
-        let url = anyURL
+        let url = anyURL()
         let (sut, client) = makeSUT(url: url)
         
         [199, 300, 400, 500].forEach { statusCode in
             let non200HTTPResponse = HTTPURLResponse(url: url, statusCode: statusCode, httpVersion: nil, headerFields: nil)!
-            client.stub(.success((anyData, non200HTTPResponse)))
+            client.stub(.success((anyData(), non200HTTPResponse)))
             
             Task {
                 await expect(sut, toDeliver: .failure(.invalidData))
@@ -47,7 +47,7 @@ final class RemoteTickerRepositoryTests: XCTestCase {
     }
     
     func test_load_deliversErrorOn200HTTPResponseWithInvalidJSON() async {
-        let url = anyURL
+        let url = anyURL()
         let (sut, client) = makeSUT(url: url)
         let invalidJSON = Data("invalid json".utf8)
         let responseWith200StatusCode = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
@@ -57,7 +57,7 @@ final class RemoteTickerRepositoryTests: XCTestCase {
     }
     
     func test_load_deliversNoTickersOn200HTTPResponseWithEmptyJSON() async {
-        let url = anyURL
+        let url = anyURL()
         let (sut, client) = makeSUT()
         let emptyJSON = Data("[]".utf8)
         let responseWith200StatusCode = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
@@ -67,7 +67,7 @@ final class RemoteTickerRepositoryTests: XCTestCase {
     }
     
     func test_load_deliversTickersOn200HTTPResponseWithValidJSON() async {
-        let url = anyURL
+        let url = anyURL()
         let (sut, client) = makeSUT()
         
         let ticker0 = makeTicker(
@@ -146,7 +146,7 @@ final class RemoteTickerRepositoryTests: XCTestCase {
         return (model, json)
     }
     
-    private func makeSUT(url: URL = anyURL, file: StaticString = #filePath, line: UInt = #line) -> (sut: TickerRepository, client: HTTPClientSpy) {
+    private func makeSUT(url: URL = anyURL(), file: StaticString = #filePath, line: UInt = #line) -> (sut: TickerRepository, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
         let sut = RemoteTickerRepository(client: client, url: url)
         trackForMemoryLeaks(client)

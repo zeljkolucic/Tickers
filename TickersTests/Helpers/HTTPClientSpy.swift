@@ -25,7 +25,7 @@ final class HTTPClientSpy: HTTPClient {
         case let .failure(error):
             throw error
         case .none:
-            (anyData, anyHTTPURLResponse)
+            (anyData(), anyHTTPURLResponse())
         }
     }
 }

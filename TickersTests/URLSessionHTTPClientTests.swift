@@ -41,12 +41,11 @@ final class URLSessionHTTPClientTests: XCTestCase {
     }
     
     func test_get_deliversErrorOnRequestError() async {
-        let url = anyURL
-        let error = anyError
+        let error = anyError()
         URLProtocolStub.stub(data: nil, response: nil, error: error)
         
         do {
-            _ = try await makeSUT().get(from: url)
+            _ = try await makeSUT().get(from: anyURL())
             XCTFail("Expected error, got success instead")
         } catch let receivedError as NSError {
             XCTAssertEqual(receivedError.domain, error.domain)
@@ -55,12 +54,12 @@ final class URLSessionHTTPClientTests: XCTestCase {
     }
     
     func test_get_succeedsOnHTTPURLResponseWithData() async {
-        let data = anyData
-        let response = anyHTTPURLResponse
+        let data = anyData()
+        let response = anyHTTPURLResponse()
         URLProtocolStub.stub(data: data, response: response, error: nil)
         
         do {
-            let (receivedData, receivedResponse) = try await makeSUT().get(from: anyURL)
+            let (receivedData, receivedResponse) = try await makeSUT().get(from: anyURL())
             XCTAssertEqual(receivedData, data)
             XCTAssertEqual(receivedResponse.statusCode, response.statusCode)
         } catch {
