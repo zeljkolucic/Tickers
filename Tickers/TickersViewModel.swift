@@ -9,6 +9,7 @@ import Foundation
 
 public final class TickersViewModel {
     public var message: String?
+    public var tickers = [Ticker]()
     
     private let tickerRepository: TickerRepository
     
