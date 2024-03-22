@@ -24,6 +24,7 @@
 		E45BA72A2BACEB7D009765E4 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7292BACEB7D009765E4 /* URLSessionHTTPClientTests.swift */; };
 		E45CA42F2BAD8766005F8285 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45CA42E2BAD8766005F8285 /* URLProtocolStub.swift */; };
 		E4C7E4A12BAD8D3200A7F151 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4A02BAD8D3200A7F151 /* URLSessionHTTPClient.swift */; };
+		E4C7E4A32BAD8DF200A7F151 /* TickersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4A22BAD8DF200A7F151 /* TickersViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		E45BA7292BACEB7D009765E4 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		E45CA42E2BAD8766005F8285 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		E4C7E4A02BAD8D3200A7F151 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		E4C7E4A22BAD8DF200A7F151 /* TickersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				E45BA7142BAC488B009765E4 /* RemoteTickerRepositoryTests.swift */,
 				E45BA7292BACEB7D009765E4 /* URLSessionHTTPClientTests.swift */,
 				E45CA42E2BAD8766005F8285 /* URLProtocolStub.swift */,
+				E4C7E4A22BAD8DF200A7F151 /* TickersViewModelTests.swift */,
 			);
 			path = TickersTests;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			files = (
 				E45BA7222BACE8BE009765E4 /* XCTestCase+trackForMemoryLeaks.swift in Sources */,
 				E45CA42F2BAD8766005F8285 /* URLProtocolStub.swift in Sources */,
+				E4C7E4A32BAD8DF200A7F151 /* TickersViewModelTests.swift in Sources */,
 				E45BA72A2BACEB7D009765E4 /* URLSessionHTTPClientTests.swift in Sources */,
 				E45BA7152BAC488B009765E4 /* RemoteTickerRepositoryTests.swift in Sources */,
 				E45BA7242BACE90C009765E4 /* Ticker+Equatable.swift in Sources */,
