@@ -63,7 +63,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
             XCTAssertEqual(receivedData, data)
             XCTAssertEqual(receivedResponse.statusCode, response.statusCode)
         } catch {
-            XCTFail()
+            XCTFail("Expected to succeed, got \(error) instead")
         }
     }
     
@@ -77,7 +77,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
             XCTAssertEqual(receivedData, emptyData)
             XCTAssertEqual(receivedResponse.statusCode, response.statusCode)
         } catch {
-            XCTFail()
+            XCTFail("Expected to succeed, got \(error) instead")
         }
     }
     
