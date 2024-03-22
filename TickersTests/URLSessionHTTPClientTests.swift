@@ -67,6 +67,20 @@ final class URLSessionHTTPClientTests: XCTestCase {
         }
     }
     
+    func test_get_succeedsOnEmptyDataHTTPURLResponseWithNilData() async {
+        let response = anyHTTPURLResponse()
+        URLProtocolStub.stub(data: nil, response: response, error: nil)
+        
+        do {
+            let (receivedData, receivedResponse) = try await makeSUT().get(from: anyURL())
+            let emptyData = Data()
+            XCTAssertEqual(receivedData, emptyData)
+            XCTAssertEqual(receivedResponse.statusCode, response.statusCode)
+        } catch {
+            XCTFail()
+        }
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> URLSessionHTTPClient {

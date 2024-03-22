@@ -16,7 +16,7 @@ func anyURL() -> URL {
 }
 
 func anyData() -> Data {
-    Data()
+    Data("any data".utf8)
 }
 
 func anyHTTPURLResponse() -> HTTPURLResponse {
