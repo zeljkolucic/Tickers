@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum Symbol: String, CaseIterable, Decodable {
+public enum Symbol: String, CaseIterable {
     case tBTCUSD
     case tETHUSD
     case tCHSBUSD = "tCHSB:USD"

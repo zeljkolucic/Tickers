@@ -66,3 +66,5 @@ public final class RemoteTickerRepository: TickerRepository {
         return tickers.map { $0.ticker }
     }
 }
+
+extension Symbol: Decodable {}
