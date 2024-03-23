@@ -29,7 +29,7 @@ public enum Symbol: String, CaseIterable {
     case tPLUUSD
     case tFILUSD
     
-    public var name: String {
+    var name: String {
         let suffixLength = currencyCode.count
         var name = rawValue.dropFirst().dropLast(suffixLength)
         if name.hasSuffix(":") {

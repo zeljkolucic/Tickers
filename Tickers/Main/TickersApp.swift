@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct TickersApp: App {
     private let baseURL = URL(string: "https://api-pub.bitfinex.com")!
-    private let timeInterval: TimeInterval = 5
+    private let timeInterval: TimeInterval = 1
     
     var body: some Scene {
         WindowGroup {

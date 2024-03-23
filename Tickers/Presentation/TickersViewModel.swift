@@ -54,6 +54,7 @@ public final class TickersViewModel: ObservableObject {
                     }
                 }
                 .eraseToAnyPublisher()
+                .receive(on: DispatchQueue.main)
             }
             .sink { [weak self] completion in
                 if case .failure = completion {

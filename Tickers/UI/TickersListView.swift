@@ -19,6 +19,7 @@ struct TickersListView: View {
             tickers
                 .navigationTitle(viewModel.title)
                 .navigationBarTitleDisplayMode(.large)
+                .background(Color.primaryBackground)
         }
         .task {
             viewModel.loadAtTimeIntervals()
@@ -31,10 +32,10 @@ struct TickersListView: View {
             ForEach(viewModel.tickers) { ticker in
                 TickerView(ticker: ticker)
                     .listRowSeparator(.hidden)
+                    .listRowBackground(Color.primaryBackground)
             }
         }
         .listStyle(.plain)
-        
     }
 }
 
@@ -48,5 +49,5 @@ struct TickersListView: View {
         }
     }
     
-    return TickersListView(viewModel: TickersViewModel(tickerRepository: TickerRepositoryStub(), timeInterval: 5))
+    return TickersListView(viewModel: TickersViewModel(tickerRepository: TickerRepositoryStub(), timeInterval: 1))
 }

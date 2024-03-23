@@ -32,7 +32,8 @@
 		E4C7E4AD2BAD9C0C00A7F151 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E4C7E4AC2BAD9C0C00A7F151 /* Localizable.xcstrings */; };
 		E4C7E4B92BADCC8500A7F151 /* TickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4B82BADCC8500A7F151 /* TickerView.swift */; };
 		E4C7E4BB2BAEF54800A7F151 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4BA2BAEF54800A7F151 /* Image.swift */; };
-		E4C7E4BD2BAEF67A00A7F151 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4BC2BAEF67A00A7F151 /* Color.swift */; };
+		E4C7E4BF2BAEF8CC00A7F151 /* UIImage+draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4BE2BAEF8CC00A7F151 /* UIImage+draw.swift */; };
+		E4C7E4C12BAEFA1000A7F151 /* Symbol+image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4C02BAEFA1000A7F151 /* Symbol+image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +74,8 @@
 		E4C7E4AC2BAD9C0C00A7F151 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		E4C7E4B82BADCC8500A7F151 /* TickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerView.swift; sourceTree = "<group>"; };
 		E4C7E4BA2BAEF54800A7F151 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		E4C7E4BC2BAEF67A00A7F151 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		E4C7E4BE2BAEF8CC00A7F151 /* UIImage+draw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+draw.swift"; sourceTree = "<group>"; };
+		E4C7E4C02BAEFA1000A7F151 /* Symbol+image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Symbol+image.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,10 +199,10 @@
 			children = (
 				E45BA6FF2BAC0F28009765E4 /* Preview Content */,
 				E45BA6FD2BAC0F28009765E4 /* Assets.xcassets */,
+				E4C7E4C22BAEFD3500A7F151 /* Helpers */,
 				E45BA6FB2BAC0F26009765E4 /* TickersListView.swift */,
 				E4C7E4B82BADCC8500A7F151 /* TickerView.swift */,
-				E4C7E4BA2BAEF54800A7F151 /* Image.swift */,
-				E4C7E4BC2BAEF67A00A7F151 /* Color.swift */,
+				E4C7E4C02BAEFA1000A7F151 /* Symbol+image.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -246,6 +248,15 @@
 				E4C7E4A22BAD8DF200A7F151 /* TickersViewModelTests.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		E4C7E4C22BAEFD3500A7F151 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E4C7E4BA2BAEF54800A7F151 /* Image.swift */,
+				E4C7E4BE2BAEF8CC00A7F151 /* UIImage+draw.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,15 +362,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4C7E4AB2BAD9BAF00A7F151 /* Localizable.swift in Sources */,
+				E4C7E4C12BAEFA1000A7F151 /* Symbol+image.swift in Sources */,
 				E45BA7282BACE9B1009765E4 /* TickerRepository.swift in Sources */,
 				E45BA6FC2BAC0F26009765E4 /* TickersListView.swift in Sources */,
 				E4C7E4A92BAD9B6E00A7F151 /* TickersViewModel.swift in Sources */,
 				E4C7E4A72BAD964B00A7F151 /* TickersEndpoint.swift in Sources */,
+				E4C7E4BF2BAEF8CC00A7F151 /* UIImage+draw.swift in Sources */,
 				E45BA6FA2BAC0F26009765E4 /* TickersApp.swift in Sources */,
 				E4C7E4BB2BAEF54800A7F151 /* Image.swift in Sources */,
 				E4C7E4A12BAD8D3200A7F151 /* URLSessionHTTPClient.swift in Sources */,
 				E45BA71E2BAC64DA009765E4 /* Ticker.swift in Sources */,
-				E4C7E4BD2BAEF67A00A7F151 /* Color.swift in Sources */,
 				E4C7E4B92BADCC8500A7F151 /* TickerView.swift in Sources */,
 				E45BA7192BAC4FDE009765E4 /* HTTPClient.swift in Sources */,
 				E45BA7172BAC4FBC009765E4 /* RemoteTickerRepository.swift in Sources */,

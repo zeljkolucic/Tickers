@@ -16,27 +16,28 @@ struct TickerView: View {
     
     var body: some View {
         HStack {
-            Image(systemName: "globe")
+            ticker.symbol.image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: Constants.imageWidth)
             Text(ticker.symbol.name)
-                .fontWeight(.bold)
             Spacer()
             VStack(alignment: .trailing) {
                 Text(ticker.price)
                     .fontWeight(.bold)
                 Text(ticker.dailyChangePercentage)
-                    .foregroundStyle(ticker.dailyChangeRelative > 0 ? .green : .red)
+                    .foregroundStyle(ticker.dailyChangeRelative > 0 ? Color.primaryGreen : Color.primaryRed)
             }
         }
         .padding()
-        .background(.white)
+        .background(Color.secondaryBackground
+            .clipShape(RoundedRectangle(cornerRadius: Constants.cornerRadius))
+            .shadow(color: .shadow, radius: Constants.shadowRadius, x: Constants.shadowOffset.width, y: Constants.shadowOffset.height)
+        )
         .overlay {
             RoundedRectangle(cornerRadius: Constants.cornerRadius)
-                .stroke(.gray, style: StrokeStyle(lineWidth: Constants.lineWidth))
-        }
-        .shadow(color: .shadow, radius: Constants.shadowRadius, x: Constants.shadowOffset.width, y: Constants.shadowOffset.height)
+                .stroke(Color.border, style: StrokeStyle(lineWidth: Constants.lineWidth))
+        } 
     }
     
     private struct Constants {
