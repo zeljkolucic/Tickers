@@ -8,6 +8,10 @@
 import Foundation
 
 struct Localizable {
+    struct NavigationBar {
+        static let title = "NavigationBar.Title"
+    }
+    
     struct Error {
         static let message = "Error.Message"
     }

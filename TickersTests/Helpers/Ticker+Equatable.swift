@@ -10,6 +10,6 @@ import Foundation
 
 extension Ticker: Equatable {
     public static func == (lhs: Ticker, rhs: Ticker) -> Bool {
-        lhs.name == rhs.name && lhs.lastPrice == rhs.lastPrice && lhs.dailyChangeRelative == rhs.dailyChangeRelative
+        lhs.symbol == rhs.symbol && lhs.lastPrice == rhs.lastPrice && lhs.dailyChangeRelative == rhs.dailyChangeRelative
     }
 }

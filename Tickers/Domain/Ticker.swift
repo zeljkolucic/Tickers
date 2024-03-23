@@ -8,28 +8,30 @@
 import Foundation
 
 public struct Ticker: Identifiable {
-    public let name: String
+    public let symbol: Symbol
     public let lastPrice: Float
     public let dailyChangeRelative: Float
     
     public var id: String {
-        name
+        symbol.name
     }
     
     var price: String {
-        lastPrice.formatted(.currency(code: "USD"))
+        lastPrice.formatted(.currency(code: symbol.currencyCode))
     }
     
     var dailyChangePercentage: String {
         let formatter = NumberFormatter()
         formatter.positivePrefix = "+"
         formatter.numberStyle = .percent
+        formatter.minimumFractionDigits = 1
+        formatter.maximumFractionDigits = 2
         let numberToFormat = NSNumber(value: dailyChangeRelative)
         return formatter.string(from: numberToFormat) ?? String(dailyChangeRelative)
     }
     
-    public init(name: String, lastPrice: Float, dailyChangeRelative: Float) {
-        self.name = name
+    public init(symbol: Symbol, lastPrice: Float, dailyChangeRelative: Float) {
+        self.symbol = symbol
         self.lastPrice = lastPrice
         self.dailyChangeRelative = dailyChangeRelative
     }

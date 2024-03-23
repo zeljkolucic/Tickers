@@ -17,6 +17,8 @@ struct TickersListView: View {
     var body: some View {
         NavigationView {
             tickers
+                .navigationTitle(viewModel.title)
+                .navigationBarTitleDisplayMode(.large)
         }
         .task {
             viewModel.loadAtTimeIntervals()
@@ -40,8 +42,8 @@ struct TickersListView: View {
     class TickerRepositoryStub: TickerRepository {
         func load() async throws -> [Ticker] {
             return [
-                Ticker(name: "BTC", lastPrice: 64714, dailyChangeRelative: -0.04482591),
-                Ticker(name: "ETH", lastPrice: 3315.5, dailyChangeRelative: -0.06389407)
+                Ticker(symbol: .tBTCUSD, lastPrice: 64714, dailyChangeRelative: 0.04482591),
+                Ticker(symbol: .tETHUSD, lastPrice: 3315.5, dailyChangeRelative: -0.06389407)
             ]
         }
     }

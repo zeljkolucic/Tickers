@@ -12,6 +12,10 @@ public final class TickersViewModel: ObservableObject {
     @Published public var message: String?
     @Published public var tickers = [Ticker]()
     
+    var title: String {
+        Localizable.NavigationBar.title.localized
+    }
+    
     private var timerCancellable: AnyCancellable?
     
     private let tickerRepository: TickerRepository

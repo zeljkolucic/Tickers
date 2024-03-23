@@ -141,7 +141,7 @@ final class RemoteTickerRepositoryTests: XCTestCase {
         high: Float,
         low: Float
     ) -> (model: Ticker, json: [Any]) {
-        let model = Ticker(name: symbol.name, lastPrice: lastPrice, dailyChangeRelative: dailyChangeRelative)
+        let model = Ticker(symbol: symbol, lastPrice: lastPrice, dailyChangeRelative: dailyChangeRelative)
         let json: [Any] = [symbol.rawValue, bid, bidSize, ask, askSize, dailyChange, dailyChangeRelative, lastPrice, volume, high, low]
         return (model, json)
     }

@@ -45,8 +45,8 @@ final class TickersViewModelTests: XCTestCase {
     
     func test_load_deliversTickersOnSuccessfulLoad() async {
         let (sut, repository) = makeSUT()
-        let ticker0 = Ticker(name: "BTC", lastPrice: 64714, dailyChangeRelative: -0.04482591)
-        let ticker1 = Ticker(name: "ETH", lastPrice: 3315.5, dailyChangeRelative: -0.06389407)
+        let ticker0 = Ticker(symbol: .tBTCUSD, lastPrice: 64714, dailyChangeRelative: -0.04482591)
+        let ticker1 = Ticker(symbol: .tETHUSD, lastPrice: 3315.5, dailyChangeRelative: -0.06389407)
         repository.stub(.success([ticker0, ticker1]))
         
         await sut.load()

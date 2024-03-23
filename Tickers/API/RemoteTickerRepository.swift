@@ -50,7 +50,7 @@ public final class RemoteTickerRepository: TickerRepository {
         }
         
         var ticker: Ticker {
-            Ticker(name: symbol.name, lastPrice: lastPrice, dailyChangeRelative: dailyChangeRelative)
+            Ticker(symbol: symbol, lastPrice: lastPrice, dailyChangeRelative: dailyChangeRelative)
         }
     }
     

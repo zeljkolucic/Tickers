@@ -11,6 +11,17 @@
           }
         }
       }
+    },
+    "NavigationBar.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tickers"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

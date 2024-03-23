@@ -20,7 +20,7 @@ struct TickerView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: Constants.imageWidth)
-            Text(ticker.name)
+            Text(ticker.symbol.name)
                 .fontWeight(.bold)
             Spacer()
             VStack(alignment: .trailing) {
@@ -36,7 +36,7 @@ struct TickerView: View {
             RoundedRectangle(cornerRadius: Constants.cornerRadius)
                 .stroke(.gray, style: StrokeStyle(lineWidth: Constants.lineWidth))
         }
-        .shadow(color: .init(white: 0.8), radius: Constants.shadowRadius, x: Constants.shadowOffset.width, y: Constants.shadowOffset.height)
+        .shadow(color: .shadow, radius: Constants.shadowRadius, x: Constants.shadowOffset.width, y: Constants.shadowOffset.height)
     }
     
     private struct Constants {
@@ -49,5 +49,5 @@ struct TickerView: View {
 }
 
 #Preview {
-    TickerView(ticker: Ticker(name: "BTC", lastPrice: 64714, dailyChangeRelative: -0.04482591))
+    TickerView(ticker: Ticker(symbol: .tBTCUSD, lastPrice: 64714, dailyChangeRelative: -0.04482591))
 }
