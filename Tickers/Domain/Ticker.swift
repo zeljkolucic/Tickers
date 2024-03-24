@@ -27,7 +27,11 @@ public struct Ticker: Identifiable {
         formatter.minimumFractionDigits = 1
         formatter.maximumFractionDigits = 2
         let numberToFormat = NSNumber(value: dailyChangeRelative)
-        return formatter.string(from: numberToFormat) ?? String(dailyChangeRelative)
+        var formattedNumber = formatter.string(from: numberToFormat) ?? String(dailyChangeRelative)
+        if dailyChangeRelative == 0 && formattedNumber.hasPrefix("+") {
+            formattedNumber.removeFirst()
+        }
+        return formattedNumber
     }
     
     public init(symbol: Symbol, lastPrice: Float, dailyChangeRelative: Float) {

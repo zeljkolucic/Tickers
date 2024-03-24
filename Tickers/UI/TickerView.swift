@@ -26,7 +26,7 @@ struct TickerView: View {
                 Text(ticker.price)
                     .fontWeight(.bold)
                 Text(ticker.dailyChangePercentage)
-                    .foregroundStyle(ticker.dailyChangeRelative >= 0 ? Color.primaryGreen : Color.primaryRed)
+                    .foregroundStyle(color(for: ticker.dailyChangeRelative))
             }
         }
         .padding()
@@ -38,6 +38,10 @@ struct TickerView: View {
             RoundedRectangle(cornerRadius: Constants.cornerRadius)
                 .stroke(Color.border, style: StrokeStyle(lineWidth: Constants.lineWidth))
         } 
+    }
+    
+    private func color(for value: Float) -> Color {
+        value > 0 ? .primaryGreen : value < 0 ? .primaryRed : .yellow
     }
     
     private struct Constants {

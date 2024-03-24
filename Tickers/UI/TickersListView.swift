@@ -22,11 +22,7 @@ struct TickersListView: View {
                     tickers
                 }
                 if viewModel.isLoading {
-                    ZStack {
-                        Color.primaryBackground.opacity(0.2)
-                            .ignoresSafeArea()
-                        ProgressView()
-                    }
+                    loadingView
                 }
             }
             .navigationTitle(viewModel.title)
@@ -57,6 +53,15 @@ struct TickersListView: View {
             }
         }
         .listStyle(.plain)
+    }
+    
+    @ViewBuilder
+    private var loadingView: some View {
+        ZStack {
+            Color.primaryBackground.opacity(0.2)
+                .ignoresSafeArea()
+            ProgressView()
+        }
     }
 }
 
