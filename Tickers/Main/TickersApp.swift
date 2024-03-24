@@ -21,7 +21,7 @@ struct TickersApp: App {
             TabView(selection: $selectedIndex) {
                 TickersListView(viewModel: viewModel)
                     .tabItem {
-                        Label("Tickers", systemImage: selectedIndex == 0 ? "chart.bar.fill" : "chart.bar")
+                        Label(Localizable.TabBar.title.localized, systemImage: selectedIndex == 0 ? "chart.bar.fill" : "chart.bar")
                     }
             }
             .tint(.primaryGreen)

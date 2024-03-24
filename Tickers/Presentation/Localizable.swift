@@ -12,6 +12,10 @@ struct Localizable {
         static let title = "NavigationBar.Title"
     }
     
+    struct TabBar {
+        static let title = "TabBar.Title"
+    }
+    
     struct Error {
         static let message = "Error.Message"
     }
