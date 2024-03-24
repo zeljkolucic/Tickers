@@ -24,7 +24,6 @@
 		E45BA72A2BACEB7D009765E4 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7292BACEB7D009765E4 /* URLSessionHTTPClientTests.swift */; };
 		E45CA42F2BAD8766005F8285 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45CA42E2BAD8766005F8285 /* URLProtocolStub.swift */; };
 		E4C7E4A12BAD8D3200A7F151 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4A02BAD8D3200A7F151 /* URLSessionHTTPClient.swift */; };
-		E4C7E4A32BAD8DF200A7F151 /* TickersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4A22BAD8DF200A7F151 /* TickersViewModelTests.swift */; };
 		E4C7E4A52BAD935400A7F151 /* TickersEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4A42BAD935400A7F151 /* TickersEndpointTests.swift */; };
 		E4C7E4A72BAD964B00A7F151 /* TickersEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4A62BAD964B00A7F151 /* TickersEndpoint.swift */; };
 		E4C7E4A92BAD9B6E00A7F151 /* TickersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7E4A82BAD9B6E00A7F151 /* TickersViewModel.swift */; };
@@ -67,7 +66,6 @@
 		E45BA7292BACEB7D009765E4 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		E45CA42E2BAD8766005F8285 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		E4C7E4A02BAD8D3200A7F151 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
-		E4C7E4A22BAD8DF200A7F151 /* TickersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersViewModelTests.swift; sourceTree = "<group>"; };
 		E4C7E4A42BAD935400A7F151 /* TickersEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersEndpointTests.swift; sourceTree = "<group>"; };
 		E4C7E4A62BAD964B00A7F151 /* TickersEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersEndpoint.swift; sourceTree = "<group>"; };
 		E4C7E4A82BAD9B6E00A7F151 /* TickersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersViewModel.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				E45BA71A2BAC5CBB009765E4 /* Helpers */,
 				E4C7E4B42BADB1E700A7F151 /* Infrastructure */,
 				E4C7E4B62BADB21600A7F151 /* API */,
-				E4C7E4B72BADB21E00A7F151 /* Presentation */,
 			);
 			path = TickersTests;
 			sourceTree = "<group>";
@@ -243,14 +240,6 @@
 				E4C7E4A42BAD935400A7F151 /* TickersEndpointTests.swift */,
 			);
 			path = API;
-			sourceTree = "<group>";
-		};
-		E4C7E4B72BADB21E00A7F151 /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				E4C7E4A22BAD8DF200A7F151 /* TickersViewModelTests.swift */,
-			);
-			path = Presentation;
 			sourceTree = "<group>";
 		};
 		E4C7E4C22BAEFD3500A7F151 /* Helpers */ = {
@@ -389,7 +378,6 @@
 			files = (
 				E45BA7222BACE8BE009765E4 /* XCTestCase+trackForMemoryLeaks.swift in Sources */,
 				E45CA42F2BAD8766005F8285 /* URLProtocolStub.swift in Sources */,
-				E4C7E4A32BAD8DF200A7F151 /* TickersViewModelTests.swift in Sources */,
 				E45BA72A2BACEB7D009765E4 /* URLSessionHTTPClientTests.swift in Sources */,
 				E45BA7152BAC488B009765E4 /* RemoteTickerRepositoryTests.swift in Sources */,
 				E45BA7242BACE90C009765E4 /* Ticker+Equatable.swift in Sources */,

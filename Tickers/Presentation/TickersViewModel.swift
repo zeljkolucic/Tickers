@@ -54,14 +54,6 @@ public final class TickersViewModel: ObservableObject {
             }.store(in: &cancellables)
     }
     
-    public func load() async {
-        do {
-            tickers = try await tickerRepository.load()
-        } catch {
-            message = Localizable.Error.message.localized
-        }
-    }
-    
     func startLoading() {
         Task { @MainActor in
             do {
