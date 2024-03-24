@@ -16,20 +16,41 @@ struct TickersListView: View {
     
     var body: some View {
         NavigationView {
-            tickers
-                .navigationTitle(viewModel.title)
-                .navigationBarTitleDisplayMode(.large)
-                .background(Color.primaryBackground)
+            ZStack {
+                VStack {
+                    message
+                    tickers
+                }
+                if viewModel.isLoading {
+                    ZStack {
+                        Color.primaryBackground.opacity(0.2)
+                            .ignoresSafeArea()
+                        ProgressView()
+                    }
+                }
+            }
+            .navigationTitle(viewModel.title)
+            .navigationBarTitleDisplayMode(.large)
+            .background(Color.primaryBackground)
+            .searchable(text: $viewModel.searchTerm)
+            .refreshable {
+                viewModel.startLoading()
+            }
         }
-        .task {
-            viewModel.loadAtTimeIntervals()
+    }
+    
+    @ViewBuilder
+    private var message: some View {
+        if let message = viewModel.message {
+            Label(message, systemImage: "wifi.exclamationmark")
+                .foregroundStyle(.red)
         }
     }
     
     @ViewBuilder
     private var tickers: some View {
         List {
-            ForEach(viewModel.tickers) { ticker in
+            ForEach(viewModel.filteredTickers) { ticker in
                 TickerView(ticker: ticker)
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.primaryBackground)
@@ -49,5 +70,5 @@ struct TickersListView: View {
         }
     }
     
-    return TickersListView(viewModel: TickersViewModel(tickerRepository: TickerRepositoryStub(), timeInterval: 1))
+    return TickersListView(viewModel: TickersViewModel(reachability: Reachability(), tickerRepository: TickerRepositoryStub(), timeInterval: 10))
 }

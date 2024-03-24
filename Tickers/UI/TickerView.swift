@@ -26,7 +26,7 @@ struct TickerView: View {
                 Text(ticker.price)
                     .fontWeight(.bold)
                 Text(ticker.dailyChangePercentage)
-                    .foregroundStyle(ticker.dailyChangeRelative > 0 ? Color.primaryGreen : Color.primaryRed)
+                    .foregroundStyle(ticker.dailyChangeRelative >= 0 ? Color.primaryGreen : Color.primaryRed)
             }
         }
         .padding()
