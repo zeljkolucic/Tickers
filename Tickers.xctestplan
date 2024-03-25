@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "1B7FCBCE-C91A-4244-968D-F701631C16D3",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Tickers.xcodeproj",
+      "identifier" : "E45BA6F52BAC0F26009765E4",
+      "name" : "Tickers"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Tickers.xcodeproj",
+        "identifier" : "E45BA70A2BAC482E009765E4",
+        "name" : "TickersTests"
+      }
+    }
+  ],
+  "version" : 1
+}
