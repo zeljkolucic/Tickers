@@ -40,5 +40,7 @@ Architecture that has been implemented is a variation of CLEAN architecture, wit
 
 `URLSessionHTTPClient` belongs to the `Infrastructure` layer of the application, and represents an implementation of `HTTPClient` protocol which fetches the data from the given URL using `URLSession`. Since the `URLSessionHTTPClient` is hidden behind an `HTTPClient` protocol, the rest of the collaborators do not know about the implementation, and therefore frameworks like **Alamofire** or **Moya** could be used instead.
 
+<img src="https://github.com/zeljkolucic/Tickers/assets/70879730/0d452e6d-c69d-49ca-b23b-260faf517a55" alt="drawing">
+
 ## Unit Tests
 `URLSessionHTTPClient` and `RemoteTickerRepository` classes have been fully covered with unit tests, gathering coverage of 94%. Following Test-Driven Development and Behavior Driven Design, each of the test functions consists of three parts – Given, When, Then. Test function have been named in form of – **test_nameOfTheFunctionBeingTested_expectedBehavior**.

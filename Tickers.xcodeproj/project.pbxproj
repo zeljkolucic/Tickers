@@ -17,7 +17,6 @@
 		E45BA71C2BAC5CC4009765E4 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA71B2BAC5CC4009765E4 /* Helpers.swift */; };
 		E45BA71E2BAC64DA009765E4 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA71D2BAC64DA009765E4 /* Ticker.swift */; };
 		E45BA7202BAC6532009765E4 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA71F2BAC6532009765E4 /* Symbol.swift */; };
-		E45BA7222BACE8BE009765E4 /* XCTestCase+trackForMemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7212BACE8BE009765E4 /* XCTestCase+trackForMemoryLeaks.swift */; };
 		E45BA7242BACE90C009765E4 /* Ticker+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7232BACE90C009765E4 /* Ticker+Equatable.swift */; };
 		E45BA7262BACE943009765E4 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7252BACE943009765E4 /* HTTPClientSpy.swift */; };
 		E45BA7282BACE9B1009765E4 /* TickerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45BA7272BACE9B1009765E4 /* TickerRepository.swift */; };
@@ -59,7 +58,6 @@
 		E45BA71B2BAC5CC4009765E4 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		E45BA71D2BAC64DA009765E4 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		E45BA71F2BAC6532009765E4 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
-		E45BA7212BACE8BE009765E4 /* XCTestCase+trackForMemoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+trackForMemoryLeaks.swift"; sourceTree = "<group>"; };
 		E45BA7232BACE90C009765E4 /* Ticker+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ticker+Equatable.swift"; sourceTree = "<group>"; };
 		E45BA7252BACE943009765E4 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 		E45BA7272BACE9B1009765E4 /* TickerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerRepository.swift; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				E45BA71B2BAC5CC4009765E4 /* Helpers.swift */,
-				E45BA7212BACE8BE009765E4 /* XCTestCase+trackForMemoryLeaks.swift */,
 				E45BA7232BACE90C009765E4 /* Ticker+Equatable.swift */,
 			);
 			path = Helpers;
@@ -376,7 +373,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E45BA7222BACE8BE009765E4 /* XCTestCase+trackForMemoryLeaks.swift in Sources */,
 				E45CA42F2BAD8766005F8285 /* URLProtocolStub.swift in Sources */,
 				E45BA72A2BACEB7D009765E4 /* URLSessionHTTPClientTests.swift in Sources */,
 				E45BA7152BAC488B009765E4 /* RemoteTickerRepositoryTests.swift in Sources */,

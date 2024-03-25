@@ -149,8 +149,6 @@ final class RemoteTickerRepositoryTests: XCTestCase {
     private func makeSUT(url: URL = anyURL(), file: StaticString = #filePath, line: UInt = #line) -> (sut: TickerRepository, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
         let sut = RemoteTickerRepository(client: client, url: url)
-        trackForMemoryLeaks(client)
-        trackForMemoryLeaks(sut)
         return (sut, client)
     }
 }
